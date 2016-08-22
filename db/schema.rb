@@ -10,10 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822153422) do
+ActiveRecord::Schema.define(version: 20160822163429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gameweeks", force: :cascade do |t|
+    t.integer  "lineups"
+    t.integer  "substitute_in"
+    t.integer  "substitute_out"
+    t.integer  "minutes_played"
+    t.integer  "goal"
+    t.integer  "against_goal"
+    t.integer  "assist"
+    t.integer  "yellow_card"
+    t.integer  "red_card"
+    t.integer  "appearances"
+    t.integer  "day_points"
+    t.integer  "total_points"
+    t.integer  "player_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["player_id"], name: "index_gameweeks_on_player_id", using: :btree
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leagues_users", id: false, force: :cascade do |t|
+    t.integer "league_id"
+    t.integer "user_id"
+    t.index ["league_id"], name: "index_leagues_users_on_league_id", using: :btree
+    t.index ["user_id"], name: "index_leagues_users_on_user_id", using: :btree
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "position"
+    t.integer  "price"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_players_on_team_id", using: :btree
+  end
+
+  create_table "players_squads", id: false, force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "squad_id"
+    t.index ["player_id"], name: "index_players_squads_on_player_id", using: :btree
+    t.index ["squad_id"], name: "index_players_squads_on_squad_id", using: :btree
+  end
+
+  create_table "squads", force: :cascade do |t|
+    t.integer  "budget"
+    t.integer  "total_points"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_squads_on_user_id", using: :btree
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "played"
+    t.integer  "won"
+    t.integer  "draw"
+    t.integer  "lost"
+    t.integer  "gf"
+    t.integer  "ga"
+    t.integer  "gd"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +101,14 @@ ActiveRecord::Schema.define(version: 20160822153422) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "gameweeks", "players"
+  add_foreign_key "players", "teams"
+  add_foreign_key "squads", "users"
 end
