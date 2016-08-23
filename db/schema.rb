@@ -55,14 +55,16 @@ ActiveRecord::Schema.define(version: 20160822163429) do
     t.index ["team_id"], name: "index_players_on_team_id", using: :btree
   end
 
-  create_table "players_squads", id: false, force: :cascade do |t|
+  create_table "players_squads", force: :cascade do |t|
     t.integer "player_id"
     t.integer "squad_id"
+    t.string  "status"
     t.index ["player_id"], name: "index_players_squads_on_player_id", using: :btree
     t.index ["squad_id"], name: "index_players_squads_on_squad_id", using: :btree
   end
 
   create_table "squads", force: :cascade do |t|
+    t.string   "name"
     t.integer  "budget"
     t.integer  "total_points"
     t.integer  "user_id"
