@@ -1,0 +1,10 @@
+<ul>
+  <%= simple_form_for([@squad]) do |f| %>
+  <%#= form_for(@place, url: profile_places_path) do |f| %>
+  <%= f.input :name %>
+
+  <%= f.input :budget %>
+
+  <%= f.submit class:"btn btn-treehouse" %>
+  <% end %>
+</ul>
