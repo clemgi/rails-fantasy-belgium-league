@@ -13,3 +13,27 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+.wrapper {
+  padding: 50px 100px;
+}
+
+.wrapper-grey {
+  background: #F4F4F4;
+}
+.padded-large {
+  padding: 100px 0;
+}
+
+.padded {
+  padding: 30px 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+
