@@ -6,6 +6,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string :position
       t.integer :price
       t.references :team, foreign_key: true
+      t.integer :total_points
 
       t.timestamps
     end

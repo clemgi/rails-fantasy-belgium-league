@@ -17,17 +17,13 @@ ActiveRecord::Schema.define(version: 20160822163429) do
 
   create_table "gameweeks", force: :cascade do |t|
     t.integer  "lineups"
-    t.integer  "substitute_in"
-    t.integer  "substitute_out"
     t.integer  "minutes_played"
     t.integer  "goal"
     t.integer  "against_goal"
     t.integer  "assist"
     t.integer  "yellow_card"
     t.integer  "red_card"
-    t.integer  "appearances"
     t.integer  "day_points"
-    t.integer  "total_points"
     t.integer  "player_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -53,8 +49,9 @@ ActiveRecord::Schema.define(version: 20160822163429) do
     t.string   "position"
     t.integer  "price"
     t.integer  "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "total_points"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["team_id"], name: "index_players_on_team_id", using: :btree
   end
 
