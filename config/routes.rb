@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:show, :edit]
 
   namespace :profile do
-    resources :squads, only: [:update, :edit, :show]
+    resource :squad, only: [:update, :edit, :show]
     resources :gameweeks, only: [:show]
     # resources :leagues
   end
