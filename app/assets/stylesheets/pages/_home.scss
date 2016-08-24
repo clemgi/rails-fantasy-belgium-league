@@ -2,3 +2,43 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+ .banner{
+  background-size: cover;
+  height:100vh;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.banner h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.banner p{
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 50px;
+  margin-top:25px;
+}
+
+#search_bar {
+  background-color: rgba(255,255,255,0.5);
+  padding: 10px;
+  border-radius: 5pt;
+  color: #666666;
+}
+
+.home-search {
+  padding: 10px;
+  border-radius: 5pt;
+  border: none;
+  color: #666666;
+}
+
+.search-btn {
+  color: white;
+  font-size: 15pt;
+}
