@@ -1,5 +1,4 @@
 class SquadsController < ApplicationController
-  skip_before_action :authenticate_user!
   def new
     @squad = Squad.new
   end
@@ -8,7 +7,7 @@ class SquadsController < ApplicationController
     @squad = Squad.new(squad_params)
     @squad.user = current_user
 
-    if @place.save
+    if @squad.save
       redirect_to profile_path
     else
       render :new
