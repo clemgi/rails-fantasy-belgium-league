@@ -41,7 +41,7 @@ namespace :scraper do
         player_info[:total_points] = 0
         player_info[:price] = 0
         
-        player_info[:start] = player_row.css('td:nth-child(9)').children.first.text
+        player_info[:start] = player_row.css('td:nth-child(10)').children.first.text
         player_info[:minutes] = player_row.css('td:nth-child(8)').children.first.text
         player_info[:goals] = player_row.css('td:nth-child(12)').children.first.text
         player_info[:own_goals] = player_row.css('td:nth-child(13)').children.text
