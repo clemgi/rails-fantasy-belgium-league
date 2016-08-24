@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160823145010) do
   enable_extension "plpgsql"
 
   create_table "gameweeks", force: :cascade do |t|
+    t.integer  "gameweek_number"
     t.integer  "lineups"
     t.integer  "minutes_played"
     t.integer  "goal"
@@ -25,8 +26,8 @@ ActiveRecord::Schema.define(version: 20160823145010) do
     t.integer  "red_card"
     t.integer  "day_points"
     t.integer  "player_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["player_id"], name: "index_gameweeks_on_player_id", using: :btree
   end
 
