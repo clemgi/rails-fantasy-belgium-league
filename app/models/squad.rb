@@ -4,5 +4,11 @@ class Squad < ApplicationRecord
   has_many :squad_players
   has_many :players, through: :squad_players
 
-  accepts_nested_attributes_for :squad_players
+  validate :has_max_15_players
+
+  private
+
+  def has_max_15_players
+    
+  end
 end

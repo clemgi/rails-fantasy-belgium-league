@@ -2,6 +2,12 @@ class Account::SquadsController < ApplicationController
   before_action :set_squad
 
   def show
+    @squad_players = @squad.squad_players.joins(:player)
+    @squad_goalkeepers  = @squad_players.where(players: { position: "Keeper" }).order("players.name")
+    @squad_defenders    = @squad_players.where(players: { position: "Verdediger" }).order("players.name")
+    @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }).order("players.name")
+    @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }).order("players.name")
+
   end
 
   def new
@@ -33,11 +39,11 @@ class Account::SquadsController < ApplicationController
   def selection
     @teams = Team.all.order(:name)
 
-    if params[:user][:team_id]
+    if params["user"]
       find_team
     else
       @team = @teams.first
-    end
+   end
 
     @team_players = @team.players.where.not(id: @squad.player_ids)
 
@@ -84,7 +90,7 @@ class Account::SquadsController < ApplicationController
   end
 
   def find_team
-    @team = Team.find(params[:user][:team_id])
+    @team = Team.find(params["user"]["team_id"])
   end
 end
 
