@@ -2,34 +2,6 @@
   <%= simple_form_for(@squad, url: account_squad_path) do |f| %>
     <%= f.input :name %>
 
-    <h3>Choisis 2 Gardiens</h3>
-    <% @new_goalkeepers.each_with_index do |goalkeeper, index| %>
-      <%= simple_fields_for "squad_players_attributes[#{index}]", goalkeeper do |squad_player_form| %>
-        <%= squad_player_form.association :player, collection: @goalkeepers %>
-      <% end %>
-    <% end %>
-
-    <h3>Choisis 5 Défenseurs</h3>  
-    <% @new_defenders.each_with_index do |defender, index| %>
-      <%= simple_fields_for "squad_players_attributes[#{2 + index}]", defender do |squad_player_form| %>
-        <%= squad_player_form.association :player, collection: @defenders %>
-      <% end %>  
-    <% end %>
-
-    <h3>Choisis 5 Milieu</h3>  
-    <% @new_midfields.each_with_index do |midfield, index| %>
-      <%= simple_fields_for "squad_players_attributes[#{7 + index}]", midfield do |squad_player_form| %>
-        <%= squad_player_form.association :player, collection: @midfields %>
-      <% end %>  
-    <% end %>
-
-    <h3>Choisis 3 Attaquants</h3>  
-    <% @new_forwards.each_with_index do |forward, index| %>
-      <%= simple_fields_for "squad_players_attributes[#{12 + index}]", forward do |squad_player_form| %>
-        <%= squad_player_form.association :player, collection: @forwards %>
-      <% end %>   
-    <% end %>
-
     <%= f.submit class:"btn btn-treehouse" %>
   <% end %>
 </ul>

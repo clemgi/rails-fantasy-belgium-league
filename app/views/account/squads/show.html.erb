@@ -1,1 +1,39 @@
-<h1>hello world</h1>
+<h1><%= @squad.name %></h1>
+<div class="container">
+  <br>
+  <p><b>Gardiens de but</b></p>
+  <div class="row">
+    <% @squad_goalkeepers.each do |squad_player| %>
+    <div class="col-xs-3">
+      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <p><b>Défenseurs</b></p>
+  <div class="row">
+    <% @squad_defenders.each do |squad_player| %>
+    <div class="col-xs-3">
+      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <p><b>Milieux de terrain</b></p>
+  <div class="row">
+    <% @squad_midfields.each do |squad_player| %>
+    <div class="col-xs-3">
+      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <p><b>Attaquants</b></p>
+  <div class="row">
+    <% @squad_forwards.each do |squad_player| %>
+    <div class="col-xs-3">
+      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
+      <% end %>
+    </div>
+  </div>
+</div>

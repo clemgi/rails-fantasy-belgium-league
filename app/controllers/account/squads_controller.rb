@@ -2,20 +2,16 @@ class Account::SquadsController < ApplicationController
   before_action :set_squad
 
   def show
+    @squad_players = @squad.squad_players.joins(:player)
+
+    @squad_goalkeepers  = @squad_players.where(players: { position: "Keeper" }).order("players.name")
+    @squad_defenders    = @squad_players.where(players: { position: "Verdediger" }).order("players.name")
+    @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }).order("players.name")
+    @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }).order("players.name")
   end
 
   def new
     @squad = Squad.new
-
-    # @goalkeepers  = Player.where(position: "Keeper")
-    # @defenders    = Player.where(position: "Verdediger")
-    # @midfields    = Player.where(position: "Middenvelder")
-    # @forwards     = Player.where(position: "Aanvaller")
-
-    # @new_goalkeepers = 2.times.map { SquadPlayer.new }  
-    # @new_defenders   = 5.times.map { SquadPlayer.new }  
-    # @new_midfields   = 5.times.map { SquadPlayer.new }  
-    # @new_forwards    = 3.times.map { SquadPlayer.new }  
   end
 
   def create
@@ -33,11 +29,11 @@ class Account::SquadsController < ApplicationController
   def selection
     @teams = Team.all.order(:name)
 
-    if params[:user][:team_id]
+    if params[:team_id]
       find_team
     else
       @team = @teams.first
-    end
+   end
 
     @team_players = @team.players.where.not(id: @squad.player_ids)
 
@@ -84,7 +80,7 @@ class Account::SquadsController < ApplicationController
   end
 
   def find_team
-    @team = Team.find(params[:user][:team_id])
+    @team = Team.find(params[:team_id])
   end
 end
 
