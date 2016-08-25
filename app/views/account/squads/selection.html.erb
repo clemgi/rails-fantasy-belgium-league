@@ -1,10 +1,9 @@
 <div class="container">
-  <h2>Sélectionnes 2 gardiens, 5 défenseurs, 5 milieux et 3 attaquants</h2>
   <div class="row">
     <div class="col-xs-12">
+      <h2>Sélectionnes 2 gardiens, 5 défenseurs, 5 milieux et 3 attaquants</h2>
       <%= form_tag(selection_account_squad_path, method: "get") do %>
-      <%= collection_select(:user, :team_id, @teams, :id, :name) %>
-      <%#= select_tag(:teams_id, options_for_select(@teams[:id, :name])) %>
+        <%= collection_select(nil, :team_id, @teams, :id, :name, selected: params[:team_id]) %>
       <%= submit_tag("Search") %>
       <h2><b><%= @team.name %></b></h2>
       <p><b>Gardiens de but</b></p>
@@ -17,22 +16,34 @@
     <div class="col-xs-3">
       <%= player.name %>
 
-      <%= form_tag account_squad_players_path(player_id: player.id) do %>
-      <%= submit_tag "Selectionner", class: "btn btn-primary" %>
+      <% if @squad_goalkeepers.count == 2 %>
+        Déja complet
+      <% else %>
+        <%= form_tag account_squad_players_path(player_id: player.id) do %>
+          <%= submit_tag "Selectionner", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
     </div>
     <% end %>
   </div>
   <!-- DEFENDERS -->
   <br>
-  <p><b>Défenseurs</b></p>
+  <div class="row">
+    <div class="col-xs-12">
+      <p><b>Défenseurs</b></p>
+    </div>
+  </div>
   <div class="row">
     <% @team_defenders.order(:name).each do |player| %>
     <div class="col-xs-3">
       <%= player.name %>
 
-      <%= form_tag account_squad_players_path(player_id: player.id) do %>
-      <%= submit_tag "Selectionner", class: "btn btn-primary" %>
+      <% if @squad_defenders.count == 5 %>
+        Déja complet
+      <% else %>
+        <%= form_tag account_squad_players_path(player_id: player.id) do %>
+          <%= submit_tag "Selectionner", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
     </div>
     <% end %>
