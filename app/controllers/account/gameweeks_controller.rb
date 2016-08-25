@@ -1,7 +1,7 @@
 class Account::GameweeksController < ApplicationController
 
   def show
-    @gameweek = Gameweek.find(params[:id])
+    @gameweeks = current_user.squad.gameweeks.where(gameweek_number: params[:id])
   end
 
 #   def create
