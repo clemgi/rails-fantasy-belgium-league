@@ -33,7 +33,12 @@ class Account::SquadsController < ApplicationController
   def selection
     @teams = Team.all.order(:name)
 
-    @team = @teams.first
+    if params[:user][:team_id]
+      find_team
+    else
+      @team = @teams.first
+    end
+
     @team_players = @team.players.where.not(id: @squad.player_ids)
 
     @squad_players = @squad.squad_players.joins(:player)
@@ -76,6 +81,10 @@ class Account::SquadsController < ApplicationController
 
   def set_squad
     @squad = current_user.squad
+  end
+
+  def find_team
+    @team = Team.find(params[:user][:team_id])
   end
 end
 

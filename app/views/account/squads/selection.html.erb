@@ -2,6 +2,11 @@
   <div class="col-xs-12">
     <h2>Choisis 2 gardiens</h2>
     <p>Equipe : <%= @team.name %></p>
+    <%= form_tag(selection_account_squad_path, method: "get") do %>
+    <%= collection_select(:user, :team_id, @teams, :id, :name) %>
+    <%#= select_tag(:teams_id, options_for_select(@teams[:id, :name])) %>
+    <%= submit_tag("Search") %>
+    <% end %>
   </div>  
 </div>
 
