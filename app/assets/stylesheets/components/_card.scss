@@ -1,0 +1,41 @@
+/* Card design */
+.card{
+  position: relative;
+  background-size: cover !important;
+  height: 250px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 300ms ease;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  box-shadow: 0px 0px 0px rgba(1,1,1, 0.5);
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.01) rotate(0.2deg);
+    box-shadow: 3px 3px 3px rgba(1,1,1, 0.5);
+  }
+}
+
+.card-user{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card-category{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+}
+
+.card-description{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.background_default {
+  background-image: "background_show.jpeg";
+}
