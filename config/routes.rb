@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
-  devise_for :users,
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
+  ActiveAdmin.routes(self)
+
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :squads, only: [:new, :create]
 
-    resource :profile, only: [:show, :edit]
+  # resources :squads, only: [:index, :show]
+  
+  resources :teams, only: [:show]
 
-  namespace :profile do
-    resource :squad, only: [:update, :edit, :show]
-    resources :gameweeks, only: [:show]
-    # resources :leagues
+  namespace :account do
+    resource :profile, only: [:show, :edit, :update]
+    resource :squad,   only: [:show, :new, :create, :edit, :update] do
+      member do
+        get :selection
+      end
+    end
+
+    resources :squad_players, only: [:create, :destroy]
+    resources :gameweeks, only: [:index, :show]
   end
 end

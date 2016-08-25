@@ -1,4 +1,4 @@
-class Profile::GameweeksController < ApplicationController
+class Account::GameweeksController < ApplicationController
 
   def show
     @gameweek = Gameweek.find(params[:id])

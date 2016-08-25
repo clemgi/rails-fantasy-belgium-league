@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Choisis 2 gardiens</h2>
+    <p>Equipe : <%= @team.name %></p>
+  </div>  
+</div>
+
+<div class="row">
+  <% @team_goalkeepers.order(:name).each do |player| %>
+    <div class="col-xs-3">
+      <%= player.name %>
+
+      <%= form_tag account_squad_players_path(player_id: player.id) do %>
+        <%= submit_tag "Selectionner", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Selectionnés</h3>
+  </div>  
+</div>
+
+<div class="row">
+  <% @squad_goalkeepers.each do |squad_player| %>
+    <div class="col-xs-3">
+      <%= squad_player.player.name %>
+
+      <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= submit_tag "Retirer", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

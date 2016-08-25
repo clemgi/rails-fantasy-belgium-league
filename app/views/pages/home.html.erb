@@ -1,7 +1,7 @@
 <div class="banner" style="background-image:url('<%= image_path @background %>')">
 
   <div class="banner-content text-center">
-    <h1>Fantasy Belgian ProLeague</h1>
+    <h1>Fantasy ProLeague</h1>
     <p>Crée ton équipe et remporte le titre</p>
     <%#= form_tag("/places", method: "get") do %>
     <div class="content-form form-group" id="search_bar">
@@ -9,7 +9,7 @@
 
         <%#= date_field_tag :event_date, nil, class: "home-search" %>
 
-        <%=link_to 'Commencer à jouer', new_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+        <%=link_to 'Commencer à jouer', new_account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
         <%#= submit_tag("submit", class:"search-btn navbar-wagon-item navbar-wagon-button btn") %>
     </div>
     <%# end %>
