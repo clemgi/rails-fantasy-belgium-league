@@ -1,14 +1,12 @@
 class Gameweek < ApplicationRecord
   belongs_to :player
 
-  #TODO implement a methode for the minutes_played
-  #Not played: -2
-  #For playing up to 60 minutes : 1
-  #For playing 60 minutes or more : 2
 
   def calculate
     self.minutes_played = amount_minutes_played
     self.day_points.nil? ? self.day_points = points_minutes_played(amount_of_minutes) : self.day_points += points_minutes_played(amount_of_minutes)
+    self.day_points.nil? ? self.day_points = score_position : self.day_points += score_position
+
     self.save!
   end
 
@@ -31,6 +29,20 @@ class Gameweek < ApplicationRecord
       1
     end
   end
+
+
+
+  def score_position
+    if player.position == "#{"Aanvaller"}"
+      4
+    elsif player.position == "#{"Midfielder"}"
+      5
+    else
+      6
+      #player.position == "#{"Keeper"}" || player.position == "#{"Verdediger"}"
+    end
+  end
+
 end
 
 
