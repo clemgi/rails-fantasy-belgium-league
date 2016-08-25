@@ -1,5 +1,5 @@
 require 'open-uri'
-Gameweek_number = 5
+Gameweek_number = 4
 namespace :scraper do
   desc "Retrieves teams and players and put them in DB"
   task gameweek: [:environment] do
@@ -23,14 +23,14 @@ namespace :scraper do
                        draw: draws, gf: gf, ga: ga, gd: gd, points: points)
       team_show_view = Nokogiri::HTML(open("http://sporza.be#{team_url}"))
       players_list = team_show_view.css('tbody > tr').each do |player_row|
-        
+
         player_info = {}
         player_num = player_row.css('td:nth-child(1)').children.first.text
         player_info[:name] = player_row.css('td:nth-child(3)').children[1].children.text.strip
         player_info[:position] = player_row.css('td:nth-child(6)').children.first.attributes['title'].value
         player_info[:total_points] = 0
         player_info[:price] = 0
-        
+
         player_info[:start] = player_row.css('td:nth-child(10)').children.first.text
         player_info[:minutes] = player_row.css('td:nth-child(8)').children.first.text
         player_info[:goals] = player_row.css('td:nth-child(12)').children.first.text
@@ -45,7 +45,7 @@ namespace :scraper do
                                       price: 0,
                                       total_points: 0)
         end
-       
+
         puts old_player.name
         if old_player.gameweeks.empty?
           # Add gameweek from scratch
@@ -61,7 +61,7 @@ namespace :scraper do
         else
           # Subtract totals from previous gameweek to get this week's numbers
           # We have access to player: old_player
-          # We have access to his latest gameweek: 
+          # We have access to his latest gameweek:
           # old_player.gameweeks.where(gameweek_number: GAMEWEEK_NUMBER-1)
           old_player.gameweeks.where(gameweek_number: Gameweek_number).destroy_all
           old_gameweek = old_player.gameweeks.where(gameweek_number: Gameweek_number-1).first
@@ -78,7 +78,7 @@ namespace :scraper do
           new_gameweek.yellow_card = latest_yellows
           new_gameweek.red_card = latest_reds
           new_gameweek.save!
-        end 
+        end
       end
     end
   end
