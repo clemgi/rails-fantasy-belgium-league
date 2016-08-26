@@ -16,8 +16,6 @@ class Account::SquadPlayersController < ApplicationController
   end
 
   def update
-    @squad = current_user.squad
-    if squad_player.status ==
   end
 
 
