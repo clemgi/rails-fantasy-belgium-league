@@ -1,134 +1,246 @@
+<!-- SELECTION -->
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Sélectionnes 2 gardiens, 5 défenseurs, 5 milieux et 3 attaquants</h2>
-      <%= form_tag(selection_account_squad_path, method: "get") do %>
-        <%= collection_select(nil, :team_id, @teams, :id, :name, selected: params[:team_id]) %>
-      <%= submit_tag("Search") %>
-      <h2><b><%= @team.name %></b></h2>
-      <p><b>Gardiens de but</b></p>
-      <% end %>
-    </div>  
-  </div>
-<!-- GARDIENS DE BUT -->
-  <div class="row">
-    <% @team_goalkeepers.order(:name).each do |player| %>
-    <div class="col-xs-3">
-      <%= player.name %>
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-8">
 
-      <% if @squad_goalkeepers.count == 2 %>
-        Déja complet
-      <% else %>
-        <%= form_tag account_squad_players_path(player_id: player.id) do %>
-          <%= submit_tag "Selectionner", class: "btn btn-primary" %>
-        <% end %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <!-- DEFENDERS -->
-  <br>
-  <div class="row">
-    <div class="col-xs-12">
-      <p><b>Défenseurs</b></p>
-    </div>
-  </div>
-  <div class="row">
-    <% @team_defenders.order(:name).each do |player| %>
-    <div class="col-xs-3">
-      <%= player.name %>
 
-      <% if @squad_defenders.count == 5 %>
-        Déja complet
-      <% else %>
-        <%= form_tag account_squad_players_path(player_id: player.id) do %>
-          <%= submit_tag "Selectionner", class: "btn btn-primary" %>
-        <% end %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <!-- MIDFIELDS -->
-  <br>
-  <p><b>Milieux de terrain</b></p>
-  <div class="row">
-    <% @team_midfields.order(:name).each do |player| %>
-    <div class="col-xs-3">
-      <%= player.name %>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Ma Selection</h2>
+        </div>  
+      </div>
 
-      <%= form_tag account_squad_players_path(player_id: player.id) do %>
-      <%= submit_tag "Selectionner", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <% end %>
+<!-- <p><b>Gardiens de but</b></p>
+<div class="row">
+  <%# @squad_goalkeepers.each do |squad_player| %>
+  <div class="col-xs-3">
+    <%#= squad_player.player.name %> - <%#= squad_player.player.team.name %>
+    <%#= form_tag account_squad_player_path(squad_player), method: :delete do %>
+    <%#= submit_tag "Retirer", class: "btn-xs btn-primary" %>
+    <%# end %>
   </div>
-  <!-- FORWARDS -->
-  <br>
-  <p><b>Attaquants</b></p>
-  <div class="row">
-    <% @team_forwards.order(:name).each do |player| %>
-    <div class="col-xs-3">
-      <%= player.name %>
+  <%# end %>
+</div> -->
 
-      <%= form_tag account_squad_players_path(player_id: player.id) do %>
-      <%= submit_tag "Selectionner", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <!-- SELECTION -->
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Selection</h2>
-    </div>  
-  </div>
-  <br>
+
+<div class="row">
   <p><b>Gardiens de but</b></p>
-  <div class="row">
-    <% @squad_goalkeepers.each do |squad_player| %>
-    <div class="col-xs-3">
-      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
-      <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-      <%= submit_tag "Retirer", class: "btn btn-primary" %>
-      <% end %>
+  <% @squad_goalkeepers.each do |squad_player| %>
+  <div class="col-xs-4 col-sm-2"> 
+    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+      <div class="card-category">
+        <b><%= squad_player.player.name %></b>
+      </div>
+      <div class="card-description">
+        <%= squad_player.player.team.name %></br>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= submit_tag "Retirer", class: "btn-medium" %>
+        <% end %>
+      </div>
+      <div class="card-user avatar avatar-small">
+        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+      </div>
     </div>
-    <% end %>
   </div>
-  <br>
-  <p><b>Défenseurs</b></p>
-  <div class="row">
-    <% @squad_defenders.each do |squad_player| %>
-    <div class="col-xs-3">
-      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
-      <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-      <%= submit_tag "Retirer", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <br>
-  <p><b>Milieux de terrain</b></p>
-  <div class="row">
-    <% @squad_midfields.each do |squad_player| %>
-    <div class="col-xs-3">
-      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
-      <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-      <%= submit_tag "Retirer", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <br>
-  <p><b>Attaquants</b></p>
-  <div class="row">
-    <% @squad_forwards.each do |squad_player| %>
-    <div class="col-xs-3">
-      <%= squad_player.player.name %> - <%= squad_player.player.team.name %>
-      <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-      <%= submit_tag "Retirer", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
-<%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+
+
+<div class="row">
+  <p><b>Défenseurs</b></p>
+  <% @squad_defenders.each do |squad_player| %>
+  <div class="col-xs-4 col-sm-2"> 
+    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+      <div class="card-category">
+        <b><%= squad_player.player.name %></b>
+      </div>
+      <div class="card-description">
+        <%= squad_player.player.team.name %></br>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= submit_tag "Retirer", class: "btn-medium" %>
+        <% end %>
+      </div>
+      <div class="card-user avatar avatar-small">
+        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<div class="row">
+  <p><b>Milieux de terrain</b></p>
+  <% @squad_midfields.each do |squad_player| %>
+  <div class="col-xs-4 col-sm-2"> 
+    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+      <div class="card-category">
+        <b><%= squad_player.player.name %></b>
+      </div>
+      <div class="card-description">
+        <%= squad_player.player.team.name %></br>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= submit_tag "Retirer", class: "btn-medium" %>
+        <% end %>
+      </div>
+      <div class="card-user avatar avatar-small">
+        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<div class="row">
+  <p><b>Attaquants</b></p>
+  <% @squad_forwards.each do |squad_player| %>
+  <div class="col-xs-4 col-sm-2"> 
+    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+      <div class="card-category">
+        <b><%= squad_player.player.name %></b>
+      </div>
+      <div class="card-description">
+        <%= squad_player.player.team.name %></br>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= submit_tag "Retirer", class: "btn-medium" %>
+        <% end %>
+      </div>
+      <div class="card-user avatar avatar-small">
+        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+  </div>  
+</div>
+</div>
+
+
+<!-- BUILD YOUR TEAM -->
+
+<div class="col-xs-12 col-sm-4">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Sélectionnes :</h2> 
+      <ul>
+      <li>2 gardiens</li>
+      <li>5 défenseurs</li>
+      <li>5 milieux</li>
+      <li>3 attaquants</li>
+      </ul>
+      <%= form_tag(selection_account_squad_path, method: "get") do %>
+      <%= collection_select(nil, :team_id, @teams, :id, :name, selected: params[:team_id]) %>
+      <%= submit_tag "Search", class: "btn-xs btn-primary" %>
+      <h2><b><%= @team.name %></b></h2>
+      <% end %>
+    </div>  
+  </div>
+
+<!-- GARDIENS DE BUT -->
+
+<!-- <div class="container">
+  <div class="row">
+    <%# @team_goalkeepers.order(:name).each do |player| %>
+    <div class="col-xs-12">
+      <%#= player.name %>
+      <%#= player.team.name %>
+      <%#= player.position %>
+      <%#= player.price %>
+      <%#= player.total_points %>
+      <%# if @squad_goalkeepers.count == 2 %>
+      <%# else %>
+      <%#= form_tag account_squad_players_path(player_id: player.id) do %>
+      <%#= submit_tag "Selectionner", class: "btn-xs btn-primary" %>
+      <%# end %>
+      <%# end %>
+    </div>
+    <%# end %>
+  </div>
+</div> -->
+
+<table class="cell">
+  <thead class="head">
+    <tr>
+      <th>Nom</th>
+      <th>Equipe</th>
+      <th>Points</th>
+      <th>Prix</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<!-- GOALKEEPERS -->
+    <% @team_goalkeepers.order(:name).each do |player| %>
+    <tr>
+      <td><b><%= player.name %></b></td>
+      <td>Gardien</td>
+      <td><%= player.total_points %>Pts</td>
+      <td><%= player.price %> M €</td>
+      <td><% if @squad_goalkeepers.count == 2 %>
+        <% else %>
+        <%= form_tag account_squad_players_path(player_id: player.id) do %>
+        <%= submit_tag "+", class: "btn-medium" %>
+        <% end %>
+        <% end %></td>
+      </tr>
+      <% end %>
+<!-- DEFENDERS -->
+      <% @team_defenders.order(:name).each do |player| %>
+      <tr>
+        <td><b><%= player.name %></b></td>
+        <td>Défenseur</td>
+        <td><%= player.total_points %>Pts</td>
+        <td><%= player.price %> M €</td>
+        <td><% if @squad_defenders.count == 5 %>
+          <% else %>
+          <%= form_tag account_squad_players_path(player_id: player.id) do %>
+          <%= submit_tag "+", class: "btn-medium" %>
+          <% end %>
+          <% end %></td>
+        </tr>
+        <% end %>
+<!-- MIDFIELDS -->
+        <% @team_midfields.order(:name).each do |player| %>
+        <tr>
+          <td><b><%= player.name %></b></td>
+          <td>Milieu</td>
+          <td><%= player.total_points %>Pts</td>
+          <td><%= player.price %> M €</td>
+          <td><% if @squad_midfields.count == 5 %>
+            <% else %>
+            <%= form_tag account_squad_players_path(player_id: player.id) do %>
+            <%= submit_tag "+", class: "btn-medium" %>
+            <% end %>
+            <% end %></td>
+          </tr>
+          <% end %>
+<!-- FORWARDS -->
+          <% @team_forwards.order(:name).each do |player| %>
+          <tr>
+            <td><b><%= player.name %></b></td>
+            <td>Attaquant</td>
+            <td><%= player.total_points %>Pts</td>
+            <td><%= player.price %> M €</td>
+            <td><% if @squad_forwards.count == 3 %>
+              <% else %>
+              <%= form_tag account_squad_players_path(player_id: player.id) do %>
+              <%= submit_tag "+", class: "btn-medium" %>
+              <% end %>
+              <% end %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
