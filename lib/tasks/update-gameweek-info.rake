@@ -1,8 +1,9 @@
 require 'open-uri'
-Gameweek_number = 4
+Gameweek_number = 5
 namespace :scraper do
   desc "Retrieves teams and players and put them in DB"
   task gameweek: [:environment] do
+    ###################### FIND LATEST TEAM INFO ############################
     url_string = "http://sporza.be/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617"
     index_page = Nokogiri::HTML(open(url_string))
     team_css = index_page.css('tbody > tr').each do |team_row|
@@ -16,21 +17,18 @@ namespace :scraper do
       ga = team_row.css('td:nth-child(8)').children.first.text
       gd = team_row.css('td:nth-child(9)').children.first.text
       points = team_row.css('td:nth-child(10)').children.first.text
+    ###################### FIND TEAM FROM DB ############################
       old_team = Team.find_by_name(team_name)
       puts old_team.name
-      # Updates each team in DB to newest stats
-      old_team.update!(played: games_played, won: wins, lost: losses,
-                       draw: draws, gf: gf, ga: ga, gd: gd, points: points)
+    ###################### FIND TEAM PLAYER INFO ########################
       team_show_view = Nokogiri::HTML(open("http://sporza.be#{team_url}"))
       players_list = team_show_view.css('tbody > tr').each do |player_row|
-
         player_info = {}
         player_num = player_row.css('td:nth-child(1)').children.first.text
         player_info[:name] = player_row.css('td:nth-child(3)').children[1].children.text.strip
         player_info[:position] = player_row.css('td:nth-child(6)').children.first.attributes['title'].value
         player_info[:total_points] = 0
         player_info[:price] = 0
-
         player_info[:start] = player_row.css('td:nth-child(10)').children.first.text
         player_info[:minutes] = player_row.css('td:nth-child(8)').children.first.text
         player_info[:goals] = player_row.css('td:nth-child(12)').children.first.text
@@ -38,6 +36,7 @@ namespace :scraper do
         player_info[:yellow] = player_row.css('td:nth-child(14)').children.first.text
         player_info[:red] = player_row.css('td:nth-child(15)').children.first.text
         old_player = old_team.players.find_by_name(player_info[:name])
+      ###################### CREATE PLAYER IF NEEDED ########################
         unless old_player
           old_player = Player.create!(name: player_info[:name],
                                       position: player_info[:position],
@@ -45,8 +44,8 @@ namespace :scraper do
                                       price: 0,
                                       total_points: 0)
         end
-
         puts old_player.name
+      ###################### UPDATE PLAYER LATEST GAMEWEEK ########################
         if old_player.gameweeks.empty?
           # Add gameweek from scratch
           new_gameweek = old_player.gameweeks.build(gameweek_number: Gameweek_number,
@@ -57,6 +56,12 @@ namespace :scraper do
           new_gameweek.against_goal = player_info[:own_goals]
           new_gameweek.yellow_card = player_info[:yellow]
           new_gameweek.red_card = player_info[:red]
+          new_gameweek.won = wins
+          new_gameweek.lost = losses
+          new_gameweek.draw = draws
+          new_gameweek.ga = ga
+          new_gameweek.gf = gf
+          new_gameweek.gd = gd
           new_gameweek.save!
         else
           # Subtract totals from previous gameweek to get this week's numbers
@@ -77,9 +82,19 @@ namespace :scraper do
           new_gameweek.goal = latest_goals
           new_gameweek.yellow_card = latest_yellows
           new_gameweek.red_card = latest_reds
+          new_gameweek.won = wins.to_i - old_team.won
+          new_gameweek.lost = losses.to_i - old_team.lost
+          new_gameweek.draw = draws.to_i - old_team.draw
+          new_gameweek.ga = ga.to_i - old_team.ga
+          new_gameweek.gf = gf.to_i - old_team.gf
+          new_gameweek.gd = gd.to_i - old_team.gd
           new_gameweek.save!
         end
       end
+    ###################### UPDATE TEAM INFO ############################
+      # Updates each team in DB to newest stats
+      old_team.update!(played: games_played, won: wins, lost: losses,
+                       draw: draws, gf: gf, ga: ga, gd: gd, points: points)
     end
   end
 end
