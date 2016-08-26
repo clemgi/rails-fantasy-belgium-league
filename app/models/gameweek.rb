@@ -37,11 +37,11 @@ class Gameweek < ApplicationRecord
   end
 
   def points_clean_sheet
-    if team.ga == 0 && player.position == "#{"Verdediger"}"
+    if player.team.ga == 0 && player.position == "#{"Verdediger"}"
       4
-    elsif team.ga == 0 && player.position == "#{"Keeper"}"
+    elsif player.team.ga == 0 && player.position == "#{"Keeper"}"
       4
-    elsif team.ga == 0 && player.position == "#{"Midfielder"}"
+    elsif player.team.ga == 0 && player.position == "#{"Midfielder"}"
       1
     else
       0
@@ -50,9 +50,9 @@ class Gameweek < ApplicationRecord
 
 
   def points_match_score
-    if team.won == 0 && team.draw == 1
+    if player.team.won == 0 && player.team.draw == 1
       1
-    elsif team.won == 0 && team.draw == 0
+    elsif player.team.won == 0 && player.team.draw == 0
       -1
     else
       2
@@ -81,10 +81,10 @@ class Gameweek < ApplicationRecord
 
   def points_conceded
 
-    if team.ga.even? && player.position == "#{"Verdediger"}"
-      points = team.ga / 2
-    elsif team.ga.even? && player.position == "#{"Keeper"}"
-      points = team.ga / 2
+    if player.team.ga.even? && player.position == "#{"Verdediger"}"
+      points = player.team.ga / 2
+    elsif player.team.ga.even? && player.position == "#{"Keeper"}"
+      points = player.team.ga / 2
     else
       points = 0
     end
