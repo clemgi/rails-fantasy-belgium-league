@@ -32,19 +32,24 @@
     <!-- Profile picture and dropdown -->
     <% if signed_in? %>
     <div class="navbar-wagon-item">
-
       <div class="dropdown">
-
+        <span>
+        <%= link_to "Mon équipe", account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        </span>
+        <span>
+        <%= link_to "Transferts", selection_account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        </span>
+        <span>
+        <%= link_to "Mes points", account_gameweek_path(:gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        </span>
           <span>
             <%=link_to "#{current_user.first_name} #{current_user.last_name}", account_profile_path %>
           </span>
+          
           <% if current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, class:"avatar", data: { toggle: 'dropdown'} %>
-
-
           <% else %>
           <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-
           <% end %>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -55,6 +60,7 @@
             </ul>
           </div>
         </div>
+        
         <% else %>
         <%= link_to 'login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         <%= link_to "Become a manager", new_user_registration_path,  class: "navbar-wagon-item navbar-wagon-button btn" %>

@@ -1,5 +1,7 @@
 class Account::SquadsController < ApplicationController
   before_action :set_squad
+  before_action :find_gameweek_number
+  before_action :check_existing_squad, only: [:new, :create]
 
   def show
     @squad_players = @squad.squad_players.joins(:player)
@@ -62,6 +64,16 @@ class Account::SquadsController < ApplicationController
 
   private
 
+  def check_existing_squad
+    return unless current_user.squad
+
+    if current_user.squad.players.count < 15
+      redirect_to selection_account_squad_path
+    else
+      redirect_to account_squad_path
+    end
+  end
+
   def squad_params
     params.require(:squad).permit(:name)
 
@@ -82,9 +94,9 @@ class Account::SquadsController < ApplicationController
   def find_team
     @team = Team.find(params[:team_id])
   end
+
+  def find_gameweek_number
+    @gameweeks = Gameweek.all
+    @gameweek_number = @gameweeks.last.gameweek_number
+  end
 end
-
-
-
-
-
