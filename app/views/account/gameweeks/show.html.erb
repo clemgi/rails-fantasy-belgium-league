@@ -1,1 +1,43 @@
-<h1>Game week <%= @gameweek.gameweek_number %></h1>
+<h1><%= current_user.squad.name %> </h1>
+
+<table class="sortable">
+  <thead>
+    <tr>
+    <th> Nom</th>
+      <th>Equipe</th>
+      <th> Position</th>
+      <th> Semaine</th>
+      <th> Lineups</th>
+      <th> Minutes</th>
+      <th> Goal</th>
+      <th> Against goal</th>
+      <th> Assist</th>
+      <th> Jaune</th>
+      <th> Rouge</th>
+      <th> Total</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gameweeks.each do |gameweek| %>
+    <tr>
+      <td><%= gameweek.player.name %> </td>
+      <td><%= gameweek.player.team.name %> </td>
+      <td> <%= gameweek.player.position %> </td>
+      <td><%= gameweek.gameweek_number %> </td>
+      <td><%= gameweek.lineups %> </td>
+      <td><%= gameweek.minutes_played %> </td>
+      <td><%= gameweek.goal %> </td>
+      <td><%= gameweek.against_goal %> </td>
+      <td><%= gameweek.assist %> </td>
+      <td><%= gameweek.yellow_card %> </td>
+      <td><%= gameweek.red_card %> </td>
+      <td><%= gameweek.day_points %> </td>
+    </tr>
+    </tbody>
+
+  <% end %>
+
+  </table>
+
+
