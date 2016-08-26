@@ -10,10 +10,11 @@
       <th> Lineups</th>
       <th> Minutes</th>
       <th> Goal</th>
-      <th> Against goal</th>
-      <th> Assist</th>
       <th> Jaune</th>
       <th> Rouge</th>
+      <th> Gagné</th>
+      <th> Nul</th>
+      <th> Perdu</th>
       <th> Total</th>
     </tr>
   </thead>
@@ -28,10 +29,11 @@
       <td><%= gameweek.lineups %> </td>
       <td><%= gameweek.minutes_played %> </td>
       <td><%= gameweek.goal %> </td>
-      <td><%= gameweek.against_goal %> </td>
-      <td><%= gameweek.assist %> </td>
       <td><%= gameweek.yellow_card %> </td>
       <td><%= gameweek.red_card %> </td>
+      <td><%= gameweek.player.team.won %> </td>
+      <td><%= gameweek.player.team.draw %> </td>
+      <td><%= gameweek.player.team.lost %> </td>
       <td><%= gameweek.day_points %> </td>
     </tr>
     </tbody>
