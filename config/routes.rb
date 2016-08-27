@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resource :squad,   only: [:show, :new, :create, :edit, :update] do
       member do
         get :selection
+        get :lineup
       end
     end
 
