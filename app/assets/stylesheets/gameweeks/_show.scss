@@ -1,0 +1,12 @@
+table tr.oddrow {
+    background-color: white;
+}
+
+table tr.evenrow {
+    background: rgb(0, 200, 88);
+}
+
+table tr td:hover{
+  color: black;
+  font-weight: bold;
+}
