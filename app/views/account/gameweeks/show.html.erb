@@ -1,9 +1,20 @@
-<h1><%= current_user.squad.name %> </h1>
 
-<table class="sortable">
+<div class="navbar-wagon-item">
+  <div class="dropdown">
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation" class="active"><a href="#">Mon équipe</a></li>
+      <li role="presentation"><%= link_to "Transferts", selection_account_squad_path %> </li>
+      <li role="presentation"><%= link_to "Points", account_gameweek_path(:gameweek_number)%></li>
+    </ul>
+  </div>
+</div>
+<div class="text-center">
+<h1><%= current_user.squad.name %> </h1>
+</div>
+<table class="table sortable">
   <thead>
     <tr>
-    <th> Nom</th>
+      <th> Nom</th>
       <th>Equipe</th>
       <th> Position</th>
       <th> Semaine</th>
@@ -20,8 +31,9 @@
   </thead>
 
   <tbody>
+
     <% @gameweeks.each do |gameweek| %>
-    <tr>
+    <tr class="<%= cycle('oddrow', 'evenrow') %>">
       <td><%= gameweek.player.name %> </td>
       <td><%= gameweek.player.team.name %> </td>
       <td> <%= gameweek.player.position %> </td>
@@ -36,10 +48,12 @@
       <td><%= gameweek.player.team.lost %> </td>
       <td><%= gameweek.day_points %> </td>
     </tr>
-    </tbody>
+  </tbody>
 
   <% end %>
 
-  </table>
+
+</table>
+<!-- <div class="panel-footer"></div> -->
 
 
