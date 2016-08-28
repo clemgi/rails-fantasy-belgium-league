@@ -1,14 +1,24 @@
-<!-- SELECTION -->
 <div class="container">
-  <div class="row text-center">
+  <div class="row">
     <div class="col-xs-12 col-sm-8">
+      <h2 class="text-center padded">Ma Sélection</h2>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h3 class="text-center padded">Sélection de joueurs</h3>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
 
-      <div class="row">
-        <div class="col-xs-12">
-          <h2>Ma Selection</h2>
-        </div>  
-      </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <br>
+            <br>
+            <br>
+          </div>  
+        </div>    
 
 <!-- <p><b>Gardiens de but</b></p>
 <div class="row">
@@ -24,9 +34,10 @@
 
 
 <div class="row">
-  <p><b>Gardiens de but</b></p>
+  <!-- <p><b>Gardiens de but</b></p> -->
   <% @squad_goalkeepers.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
@@ -48,9 +59,10 @@
 
 
 <div class="row">
-  <p><b>Défenseurs</b></p>
+  <!-- <p><b>Défenseurs</b></p> -->
   <% @squad_defenders.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
@@ -72,9 +84,10 @@
 
 
 <div class="row">
-  <p><b>Milieux de terrain</b></p>
+  <!-- <p><b>Milieux de terrain</b></p> -->
   <% @squad_midfields.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
@@ -96,9 +109,10 @@
 
 
 <div class="row">
-  <p><b>Attaquants</b></p>
+  <!-- <p><b>Attaquants</b></p> -->
   <% @squad_forwards.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
@@ -118,9 +132,12 @@
   <% end %>
 </div>
 
+</div>
 <div class="row">
   <div class="col-xs-12 text-center">
-    <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+    <div class="padded">
+      <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
   </div>  
 </div>
 </div>
@@ -131,22 +148,15 @@
 <div class="col-xs-12 col-sm-4">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Sélectionnes :</h2> 
-      <ul>
-      <li>2 gardiens</li>
-      <li>5 défenseurs</li>
-      <li>5 milieux</li>
-      <li>3 attaquants</li>
-      </ul>
       <%= form_tag(selection_account_squad_path, method: "get") do %>
       <%= collection_select(nil, :team_id, @teams, :id, :name, selected: params[:team_id]) %>
-      <%= submit_tag "Search", class: "btn-xs btn-primary" %>
+      <%= submit_tag "Search", class: "navbar-wagon-item navbar-wagon-button" %>
       <h2><b><%= @team.name %></b></h2>
       <% end %>
     </div>  
   </div>
 
-<!-- GARDIENS DE BUT -->
+  <!-- GARDIENS DE BUT -->
 
 <!-- <div class="container">
   <div class="row">
@@ -171,19 +181,17 @@
 <table class="cell">
   <thead class="head">
     <tr>
-      <th>Nom</th>
-      <th>Equipe</th>
+      <th>Gardiens</th>
       <th>Points</th>
       <th>Prix</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-<!-- GOALKEEPERS -->
+    <!-- GOALKEEPERS -->
     <% @team_goalkeepers.order(:name).each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
-      <td>Gardien</td>
       <td><%= player.total_points %>Pts</td>
       <td><%= player.price %> M €</td>
       <td><% if @squad_goalkeepers.count == 2 %>
@@ -191,14 +199,26 @@
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
         <%= submit_tag "+", class: "btn-medium" %>
         <% end %>
-        <% end %></td>
+        <% end %>
+        </td>
       </tr>
       <% end %>
-<!-- DEFENDERS -->
+    </tbody>
+  </table>
+  <!-- DEFENDERS -->
+  <table class="cell">
+    <thead class="head">
+      <tr>
+        <th>Défenseurs</th>
+        <th>Points</th>
+        <th>Prix</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
       <% @team_defenders.order(:name).each do |player| %>
       <tr>
         <td><b><%= player.name %></b></td>
-        <td>Défenseur</td>
         <td><%= player.total_points %>Pts</td>
         <td><%= player.price %> M €</td>
         <td><% if @squad_defenders.count == 5 %>
@@ -206,14 +226,26 @@
           <%= form_tag account_squad_players_path(player_id: player.id) do %>
           <%= submit_tag "+", class: "btn-medium" %>
           <% end %>
-          <% end %></td>
+          <% end %>
+          </td>
         </tr>
         <% end %>
-<!-- MIDFIELDS -->
+      </tbody>
+    </table>
+    <!-- MIDFIELDS -->
+    <table class="cell">
+      <thead class="head">
+        <tr>
+          <th>Milieux</th>
+          <th>Points</th>
+          <th>Prix</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
         <% @team_midfields.order(:name).each do |player| %>
         <tr>
           <td><b><%= player.name %></b></td>
-          <td>Milieu</td>
           <td><%= player.total_points %>Pts</td>
           <td><%= player.price %> M €</td>
           <td><% if @squad_midfields.count == 5 %>
@@ -221,14 +253,26 @@
             <%= form_tag account_squad_players_path(player_id: player.id) do %>
             <%= submit_tag "+", class: "btn-medium" %>
             <% end %>
-            <% end %></td>
+            <% end %>
+            </td>
           </tr>
           <% end %>
-<!-- FORWARDS -->
+        </tbody>
+      </table>
+      <!-- FORWARDS -->
+      <table class="cell">
+        <thead class="head">
+          <tr>
+            <th>Attaquants</th>
+            <th>Points</th>
+            <th>Prix</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
           <% @team_forwards.order(:name).each do |player| %>
           <tr>
             <td><b><%= player.name %></b></td>
-            <td>Attaquant</td>
             <td><%= player.total_points %>Pts</td>
             <td><%= player.price %> M €</td>
             <td><% if @squad_forwards.count == 3 %>
@@ -236,7 +280,8 @@
               <%= form_tag account_squad_players_path(player_id: player.id) do %>
               <%= submit_tag "+", class: "btn-medium" %>
               <% end %>
-              <% end %></td>
+              <% end %>
+              </td>
             </tr>
             <% end %>
           </tbody>

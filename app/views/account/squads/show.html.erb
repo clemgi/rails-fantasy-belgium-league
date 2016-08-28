@@ -3,18 +3,31 @@
 <!-- SELECTION -->
 <div class="container">
   <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <h1 class="text-center"><%= @squad.name %></h1>
+    </div>
+  </div>    
+
+  <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <h1><%= @squad.name %></h1>
+      <h2 class="text-center padded">Ma Compo</h2>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h3 class="text-center padded">Remplaçants</h3>
     </div>
   </div>
+
   <div class="row text-center">
     <div class="col-xs-12 col-sm-8">
-      
-      <div class="row">
-        <div class="col-xs-12">
-          <h2>Ma composition pour le prochain match</h2>
+      <div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <br>
+            <br>
+            <br>
+          </div>  
         </div>  
-      </div>
 
 <!-- <p><b>Gardiens de but</b></p>
 <div class="row">
@@ -30,7 +43,6 @@
 
 
 <div class="row">
-  <p><b>Gardiens de but</b></p>
   <% @squad_goalkeepers.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
@@ -51,7 +63,6 @@
 
 
 <div class="row">
-  <p><b>Défenseurs</b></p>
   <% @squad_defenders.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
@@ -72,7 +83,6 @@
 
 
 <div class="row">
-  <p><b>Milieux de terrain</b></p>
   <% @squad_midfields.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
@@ -93,7 +103,6 @@
 
 
 <div class="row">
-  <p><b>Attaquants</b></p>
   <% @squad_forwards.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
@@ -111,12 +120,6 @@
   </div>
   <% end %>
 </div>
-</div>
-<div class="col-xs-12 col-sm-4">
-
-<h2>Mes Remplaçants</h2>
-
-
 </div>
 </div>
 </div>

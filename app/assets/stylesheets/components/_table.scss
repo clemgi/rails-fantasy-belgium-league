@@ -1,3 +1,9 @@
+td th{
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+
 .cell {
   line-height: 1.5;
 }
@@ -16,3 +22,8 @@
   border-bottom: 1px solid #efefef;
   border-top: 1px solid white;
   }
+
+.im-centered { 
+  margin: auto; 
+  max-width: 300px;
+}
