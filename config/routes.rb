@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations'  }
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # resources :squads, only: [:index, :show]
-  
+
   resources :teams, only: [:show]
 
   namespace :account do

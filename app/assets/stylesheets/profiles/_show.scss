@@ -1,0 +1,28 @@
+.profile-header {
+  display: flex;
+  width: 500px;
+  margin: 40px auto;
+  justify-content: space-around;
+}
+
+.nickname-wrapper {
+  width: 400px;
+}
+
+.nickname {
+  border-bottom: 2px solid #e8e7e7;
+}
+
+
+.profile-content {
+  width: 600px;
+  margin: 40px auto;
+  background: whitesmoke;
+  padding: 20px;
+  border-radius: 2pt;
+  box-shadow: 2px 2px 2px rgba(1,1,1,0.5);
+}
+
+.content {
+  margin-top: 40px;
+}

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :set_nickname
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,6 +7,15 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_and_belongs_to_many :leagues
   has_one :squad
+
+  validates :nickname,
+    uniqueness: {
+      # object = person object being validated
+      # data = { model: "Person", attribute: "Username", value: <username> }
+      message: ->(object, data) do
+        "Hey #{object.first_name}!, #{data[:value]} is taken already! Try to find a super-original one! "
+      end
+    }, on: :update
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
@@ -25,5 +35,12 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  private
+
+  def set_nickname
+    self.nickname = "#{self.first_name.downcase}_#{self.last_name.downcase}"
+    self.save!
   end
 end
