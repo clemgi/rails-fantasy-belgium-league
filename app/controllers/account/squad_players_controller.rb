@@ -3,7 +3,9 @@ class Account::SquadPlayersController < ApplicationController
     @squad = current_user.squad
     @squad_player = @squad.squad_players.where(player_id: params[:player_id]).first_or_initialize
 
-    if valid_squad_player?
+    set_bench_status
+
+    if valid_squad_player? && team_players_rules
       @squad_player.save
     else
       flash[:alert] = "NON"
@@ -48,4 +50,29 @@ class Account::SquadPlayersController < ApplicationController
 
     selected_players_count < expected_count
   end
+
+  def team_players_rules
+    team = @squad_player.player.team
+    selected_players_count = @squad.players.where(team_id: team.id).count
+
+    expected_count = 3
+
+    selected_players_count < expected_count
+  end
+
+   def set_bench_status
+    @position = @squad_player.player.position
+    @squad_player.status = 'active'
+    case @position
+    when 'Keeper'
+      @squad_player.status = 'bench' if @squad.squad_players.select{|squad_player| squad_player.player.position == @position }.count >= 2
+    when 'Verdediger'
+      @squad_player.status = 'bench' if @squad.squad_players.select{|squad_player| squad_player.player.position == @position }.count >= 5
+    when 'Middenvelder'
+      @squad_player.status = 'bench' if @squad.squad_players.select{|squad_player| squad_player.player.position == @position }.count >= 5
+    when 'Aanvaller'
+      @squad_player.status = 'bench' if @squad.squad_players.select{|squad_player| squad_player.player.position == @position }.count >= 3
+   end
+  end
+
 end
