@@ -2,7 +2,7 @@
 .card{
   position: relative;
   background-size: cover !important;
-  height: 125px;
+  height: 150px;
   width: 110px;
   color: white;
   border-radius: 5px;
@@ -20,8 +20,11 @@
 
 .card-user{
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
 }
 
 .card-category{

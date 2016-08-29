@@ -28,7 +28,7 @@ class Account::SquadPlayersController < ApplicationController
   end
 
   def lineup
-    @squad = cureent_user.squad
+    @squad = current_user.squad
   end
 
   private

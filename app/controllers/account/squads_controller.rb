@@ -6,6 +6,10 @@ class Account::SquadsController < ApplicationController
   def show
     @squad_players = @squad.squad_players.joins(:player)
 
+    @squad_players.each do |squad_player|
+      @club_image = "#{squad_player.player.team.name}.png"
+    end
+
     @squad_goalkeepers  = @squad_players.where(players: { position: "Keeper" }).order("players.name")
     @squad_defenders    = @squad_players.where(players: { position: "Verdediger" }).order("players.name")
     @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }).order("players.name")

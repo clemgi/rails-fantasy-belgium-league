@@ -1,7 +1,7 @@
 require 'open-uri'
 
 namespace :scraper do
-  desc "Retrieves teams and players and put them in DB"
+  desc "Retrieves teams and players and put them in JSON file"
   task run: [:environment] do
 
 
