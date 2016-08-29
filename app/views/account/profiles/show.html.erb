@@ -1,28 +1,34 @@
 
 <div class="profile-content">
   <div class="profile-header">
-    <div class="profile-picture avatar-large">
-      <% if current_user.facebook_picture_url %>
-      <%= image_tag current_user.facebook_picture_url, data: { toggle: 'dropdown'} %>
-      <% else %>
-      <%= image_tag 'placeholder.png',  data: { toggle: 'dropdown'}  %>
-      <% end %>
-    </div>
-    <div class="nickname-wrapper">
-      <div class="nickname">
-        <%=link_to current_user.nickname, account_profile_path %>
-        <%=link_to edit_account_profile_path do %>
-        <i class="fa fa-pencil-square-o"></i>
-        <% end %>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="avatar-large">
+          <% if current_user.facebook_picture_url %>
+            <%= image_tag current_user.facebook_picture_url, class: 'img-responsive' %>
+          <% else %>
+            <%= image_tag 'placeholder.png', class: 'img-responsive'  %>
+          <% end %>
+        </div>
+        
       </div>
-    <div class="content">
-     <p>
-       Prénom: <%= current_user.first_name %>
-     </p>
-     <p>
-       Nom: <%= current_user.last_name %>
-     </p>
-   </div>
+      <div class="col-sm-6">
+        <div class="nickname">
+          <%=link_to current_user.nickname, account_profile_path %>
+          <%=link_to edit_account_profile_path do %>
+          <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+        </div>
+        <div class="content">
+          <p>
+           Prénom: <%= current_user.first_name %>
+          </p>
+          <p>
+           Nom: <%= current_user.last_name %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

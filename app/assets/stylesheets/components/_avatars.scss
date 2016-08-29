@@ -3,11 +3,11 @@
   border-radius: 50%;
 }
 .avatar-large {
-  border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 100%;
   overflow: auto;
   position: relative;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  max-width: 200px;
 }
 
 .avatar-bordered {
