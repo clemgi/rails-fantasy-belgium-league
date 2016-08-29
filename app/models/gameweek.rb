@@ -3,6 +3,36 @@ class Gameweek < ApplicationRecord
 
   after_create :calculate_final_score
 
+
+
+
+# create_table "gameweeks", force: :cascade do |t|
+
+#     t.integer  "day_points"
+
+  # def calculate_day_points
+
+  #  if self.day_points.nil?
+  #     self.day_points = points_total
+  #   else
+  #     player.total_points += points_total
+  #   end
+  #   self.save!
+  # end
+
+ # def calculate_final_score
+ #    points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
+
+ #    if player.total_points.nil?
+ #      player.total_points = points_total
+ #    else
+ #      player.total_points += points_total
+ #    end
+ #    player.save!
+ #  end
+
+
+
   def calculate_final_score
     points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
 
