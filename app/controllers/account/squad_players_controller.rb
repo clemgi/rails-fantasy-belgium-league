@@ -27,6 +27,10 @@ class Account::SquadPlayersController < ApplicationController
     redirect_to selection_account_squad_path
   end
 
+  def lineup
+    @squad = cureent_user.squad
+  end
+
   private
 
   def valid_squad_player?

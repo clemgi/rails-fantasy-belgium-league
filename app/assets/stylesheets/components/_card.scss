@@ -2,8 +2,8 @@
 .card{
   position: relative;
   background-size: cover !important;
-  height: 150px;
-  width: 120px;
+  height: 125px;
+  width: 110px;
   color: white;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -28,13 +28,14 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .card-description{
   position: absolute;
   bottom: 10px;
   left: 10px;
+  font-size: 13px;
 }
 
 .background_default {
