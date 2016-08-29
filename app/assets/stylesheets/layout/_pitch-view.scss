@@ -1,0 +1,33 @@
+$pitch-column-width: 300px;
+
+
+.pitch-view {
+  background: red;
+}
+
+
+.pitch-view-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  background: red;
+}
+
+.pitch-view-layout {
+  display: flex;
+  flex: 1;
+
+  &--field {
+    background: green;
+    overflow: scroll;
+    flex: 1;
+    height: 100vh;
+  }
+  &--datas {
+    flex: 0 0 $pitch-column-width;
+    height: 100vh;
+    overflow: auto;
+    background-color: yellow;
+  }
+}
