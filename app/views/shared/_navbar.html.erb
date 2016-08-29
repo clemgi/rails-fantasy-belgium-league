@@ -43,9 +43,13 @@
         <%= link_to "Mes points", account_gameweek_path(:gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
         </span>
           <span>
-            <%=link_to "#{current_user.first_name} #{current_user.last_name}", account_profile_path %>
+          <% if current_user.nickname.nil? %>
+          <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
+          <% else %>
+            <%=link_to "#{current_user.nickname}", account_profile_path %>
+            <% end %>
           </span>
-          
+
           <% if current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, class:"avatar", data: { toggle: 'dropdown'} %>
           <% else %>
@@ -60,7 +64,7 @@
             </ul>
           </div>
         </div>
-        
+
         <% else %>
         <%= link_to 'login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         <%= link_to "Become a manager", new_user_registration_path,  class: "navbar-wagon-item navbar-wagon-button btn" %>
