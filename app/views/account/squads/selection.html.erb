@@ -33,7 +33,7 @@
 </div> -->
 
 
-<div class="row">
+<div class="row flex">
   <!-- <p><b>Gardiens de but</b></p> -->
   <% @squad_goalkeepers.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
@@ -49,16 +49,13 @@
         <%= submit_tag "Retirer", class: "btn-medium" %>
         <% end %>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <!-- <p><b>Défenseurs</b></p> -->
   <% @squad_defenders.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
@@ -74,16 +71,13 @@
         <%= submit_tag "Retirer", class: "btn-medium" %>
         <% end %>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <!-- <p><b>Milieux de terrain</b></p> -->
   <% @squad_midfields.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
@@ -99,16 +93,13 @@
         <%= submit_tag "Retirer", class: "btn-medium" %>
         <% end %>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <!-- <p><b>Attaquants</b></p> -->
   <% @squad_forwards.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
@@ -123,9 +114,6 @@
         <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
         <%= submit_tag "Retirer", class: "btn-medium" %>
         <% end %>
-      </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
       </div>
     </div>
   </div>
@@ -178,7 +166,7 @@
   </div>
 </div> -->
 
-<table class="cell">
+<table class="cell table table-hover table-condensed">
   <thead class="head">
     <tr>
       <th>Gardiens</th>
@@ -192,8 +180,8 @@
     <% @team_goalkeepers.order(:name).each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
-      <td><%= player.total_points %>Pts</td>
-      <td><%= player.price %> M €</td>
+      <td><%= player.total_points %> Pts</td>
+      <td><%= player.price %> M€</td>
       <td><% if @squad_goalkeepers.count == 2 %>
         <% else %>
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
@@ -206,7 +194,7 @@
     </tbody>
   </table>
   <!-- DEFENDERS -->
-  <table class="cell">
+  <table class="cell table table-hover table-condensed">
     <thead class="head">
       <tr>
         <th>Défenseurs</th>
@@ -219,8 +207,8 @@
       <% @team_defenders.order(:name).each do |player| %>
       <tr>
         <td><b><%= player.name %></b></td>
-        <td><%= player.total_points %>Pts</td>
-        <td><%= player.price %> M €</td>
+        <td><%= player.total_points %> Pts</td>
+        <td><%= player.price %> M€</td>
         <td><% if @squad_defenders.count == 5 %>
           <% else %>
           <%= form_tag account_squad_players_path(player_id: player.id) do %>
@@ -233,7 +221,7 @@
       </tbody>
     </table>
     <!-- MIDFIELDS -->
-    <table class="cell">
+    <table class="cell table table-hover table-condensed">
       <thead class="head">
         <tr>
           <th>Milieux</th>
@@ -246,8 +234,8 @@
         <% @team_midfields.order(:name).each do |player| %>
         <tr>
           <td><b><%= player.name %></b></td>
-          <td><%= player.total_points %>Pts</td>
-          <td><%= player.price %> M €</td>
+          <td><%= player.total_points %> Pts</td>
+          <td><%= player.price %> M€</td>
           <td><% if @squad_midfields.count == 5 %>
             <% else %>
             <%= form_tag account_squad_players_path(player_id: player.id) do %>
@@ -260,7 +248,7 @@
         </tbody>
       </table>
       <!-- FORWARDS -->
-      <table class="cell">
+      <table class="table table-hover table-condensed">
         <thead class="head">
           <tr>
             <th>Attaquants</th>
@@ -273,8 +261,8 @@
           <% @team_forwards.order(:name).each do |player| %>
           <tr>
             <td><b><%= player.name %></b></td>
-            <td><%= player.total_points %>Pts</td>
-            <td><%= player.price %> M €</td>
+            <td><%= player.total_points %> Pts</td>
+            <td><%= player.price %> M€</td>
             <td><% if @squad_forwards.count == 3 %>
               <% else %>
               <%= form_tag account_squad_players_path(player_id: player.id) do %>

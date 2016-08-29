@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="row text-center">
+  <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
 
@@ -42,84 +42,87 @@
 </div> -->
 
 
-<div class="row">
+<div class="row flex">
   <% @squad_goalkeepers.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
       </div>
       <div class="card-description">
-        <%= squad_player.player.team.name %></br>
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
+      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <% @squad_defenders.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
       </div>
       <div class="card-description">
-        <%= squad_player.player.team.name %></br>
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
+      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <% @squad_midfields.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
       </div>
       <div class="card-description">
-        <%= squad_player.player.team.name %></br>
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
+      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
 </div>
 
 
-<div class="row">
+<div class="row flex">
   <% @squad_forwards.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2"> 
+    <br>
     <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
       </div>
       <div class="card-description">
-        <%= squad_player.player.team.name %></br>
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <div class="card-user avatar avatar-small">
-        <%#= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      </div>
+      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
 </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <div class="padded">
+      <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+  </div>  
+</div>
+
+
 </div>
 </div>
 </div>
