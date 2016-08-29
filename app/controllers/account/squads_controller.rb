@@ -6,14 +6,14 @@ class Account::SquadsController < ApplicationController
   def show
     @squad_players = @squad.squad_players.joins(:player)
 
-    @squad_players.each do |squad_player|
-      @club_image = "#{squad_player.player.team.name}.png"
-    end
+    @squad_goalkeepers  = @squad_players.where(players: { position: "Keeper" }, status: 'active').order("players.name")
+    @squad_defenders    = @squad_players.where(players: { position: "Verdediger" }, status: 'active').order("players.name")
+    @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }, status: 'active').order("players.name")
+    @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }, status: 'active').order("players.name")
 
-    @squad_goalkeepers  = @squad_players.where(players: { position: "Keeper" }).order("players.name")
-    @squad_defenders    = @squad_players.where(players: { position: "Verdediger" }).order("players.name")
-    @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }).order("players.name")
-    @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }).order("players.name")
+   
+    @active_players     = @squad_players.where(status: 'active').order("players.name") 
+    @bench_players      = @squad_players.where(status: 'bench').order("players.name") 
   end
 
   def new
@@ -56,6 +56,19 @@ class Account::SquadsController < ApplicationController
     @team_defenders    = @team_players.where(position: "Verdediger").order(:name)
     @team_midfields    = @team_players.where(position: "Middenvelder").order(:name)
     @team_forwards     = @team_players.where(position: "Aanvaller").order(:name)
+  end
+
+  def lineup
+    @player_off = SquadPlayer.where(player_id: params[:active_player]).first
+    @player_on = SquadPlayer.where(player_id: params[:bench_player]).first
+
+    @player_off.status = 'bench'
+    @player_off.save!
+    
+    @player_on.status = 'active'
+    @player_on.save!
+
+    redirect_to '/account/squad'
   end
 
   def edit

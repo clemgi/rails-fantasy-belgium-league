@@ -53,7 +53,7 @@
       <div class="card-description">
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
+      <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
@@ -71,7 +71,7 @@
       <div class="card-description">
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
+      <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
@@ -89,7 +89,7 @@
       <div class="card-description">
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
+      <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
@@ -107,12 +107,37 @@
       <div class="card-description">
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
       </div>
-      <%= image_tag "#{@club_image}", :class => 'card-user avatar-team' %>
+      <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
     </div>
   </div>
   <% end %>
 </div>
+
 </div>
+<div class="row flex">
+  <% @bench_players.each do |squad_player| %>
+  <div class="col-xs-4 col-sm-2"> 
+    <br>
+    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+      <div class="card-category">
+        <b><%= squad_player.player.name %></b>
+      </div>
+      <div class="card-description">
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+      </div>
+      <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= form_tag '/account/squad/lineup', method: :get do %>
+  <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
+  <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
+  <%= select_tag :bench_player, options_for_select(bench_players_array) %> 
+  <%= select_tag :active_player, options_for_select(active_players_array) %> 
+  <%= submit_tag %> 
+<% end %>
 
 <div class="row">
   <div class="col-xs-12 text-center">
