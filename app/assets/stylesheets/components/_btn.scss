@@ -11,3 +11,13 @@
   text-decoration: none;
   color: white;
 }
+
+.btn {
+  color: #090909;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-weight: bold !important;
+  &:hover {
+    color: #090909;
+  }
+
+}

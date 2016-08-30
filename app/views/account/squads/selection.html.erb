@@ -1,3 +1,5 @@
+<%= content_for :body_class, "body-picth-active" %>
+
 <div class="pitch-view-container">
   <div class="pitch-view-layout">
     <div class="pitch-view-layout--field">
@@ -7,4 +9,10 @@
       <%= render 'account/squads/data' %>
     </div>
   </div>
+</div>
+
+<div class="pitch-view--call-to-action">
+  <% if @squad_players.count == 15 %>
+    <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+  <% end %>
 </div>

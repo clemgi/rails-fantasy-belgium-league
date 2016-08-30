@@ -1,17 +1,14 @@
-$pitch-column-width: 300px;
+$pitch-column-width: 400px;
 
-
-.pitch-view {
-  background: red;
+.body-picth-active {
+  overflow: hidden;
 }
-
 
 .pitch-view-container {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   overflow: hidden;
-  background: red;
 }
 
 .pitch-view-layout {
@@ -19,7 +16,6 @@ $pitch-column-width: 300px;
   flex: 1;
 
   &--field {
-    background: green;
     overflow: scroll;
     flex: 1;
     height: 100vh;
@@ -28,6 +24,22 @@ $pitch-column-width: 300px;
     flex: 0 0 $pitch-column-width;
     height: 100vh;
     overflow: auto;
-    background-color: yellow;
+    padding: 20px;
+    background-color: white;
+
+    border-left: 1px solid #e4ecec;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+    z-index: 100;
   }
+}
+
+.pitch-view--call-to-action {
+  position: fixed;
+  width: calc(100% - 400px);
+  border-top: 1px solid #e4ecec;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  bottom: 0;
+  text-align: center;
 }
