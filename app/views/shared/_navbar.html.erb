@@ -34,47 +34,45 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <span>
-        <%= link_to "Mon équipe", account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+          <%= link_to "Mon équipe", account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         </span>
         <span>
-        <%= link_to "Transferts", selection_account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+          <%= link_to "Transferts", selection_account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         </span>
         <span>
-        <%= link_to "Mes Points", account_gameweek_path(@gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
-
-
+          <%= link_to "Mes Points", account_gameweek_path(@gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
         </span>
-          <span>
+        <span>
           <% if current_user.nickname.nil? %>
           <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
           <% else %>
-            <%=link_to "#{current_user.nickname}", account_profile_path %>
-            <% end %>
-          </span>
-
-          <% if current_user.facebook_picture_url %>
-          <%= image_tag current_user.facebook_picture_url, class:"avatar", data: { toggle: 'dropdown'} %>
-          <% else %>
-          <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+          <%=link_to "#{current_user.nickname}", account_profile_path %>
           <% end %>
+        </span>
 
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>  <%= link_to 'Profile', account_profile_path %>
-              <li>
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+        <% if current_user.facebook_picture_url %>
+        <%= image_tag current_user.facebook_picture_url, class:"avatar", data: { toggle: 'dropdown'} %>
         <% else %>
-        <%= link_to 'login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-        <%= link_to "Become a manager", new_user_registration_path,  class: "navbar-wagon-item navbar-wagon-button btn" %>
+        <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
         <% end %>
 
-        <!-- Button (call-to-action) -->
-
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>  <%= link_to 'Profile', account_profile_path %>
+            <li>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
       </div>
+
+      <% else %>
+      <%= link_to 'login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to "Become a manager", new_user_registration_path,  class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <% end %>
+
+      <!-- Button (call-to-action) -->
+
+    </div>
 
     <!-- Dropdown appearing on mobile only -->
     <div class="navbar-wagon-item hidden-md hidden-lg">
