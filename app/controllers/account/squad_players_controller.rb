@@ -48,14 +48,15 @@ class Account::SquadPlayersController < ApplicationController
   private
 
   def deadline?
-   start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC+2"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
-   end_time = Time.utc(*[0, 4, 11, 30, 8, 2016, 2, 243, true, "UTC+2"]) # monday morning
+  #  start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC+2"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
+  #  end_time = Time.utc(*[0, 4, 11, 30, 8, 2016, 2, 243, true, "UTC+2"]) # monday morning
 
-   if Time.now.between?(start_time, end_time)
-    false
-  else
-    true
-   end
+  #  if Time.now.between?(start_time, end_time)
+  #   false
+  # else
+  #   true
+  #  end
+  false
   end
 
   def valid_squad_player?
