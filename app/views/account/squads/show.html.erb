@@ -1,11 +1,17 @@
 <%= link_to "Mes Points", account_gameweek_path(@gameweek_number) %>
 <!-- SELECTION -->
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12">
       <h1 class="text-center"><%= @squad.name %></h1>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+<!-- TITLES -->
+>>>>>>> master
 
   <div class="row">
     <div class="col-xs-12 col-sm-8">
@@ -16,8 +22,11 @@
     </div>
   </div>
 
+<!-- PITCH (left-side)-->
+
   <div class="row">
     <div class="col-xs-12 col-sm-8">
+
       <div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
 
         <div class="row">
@@ -45,7 +54,7 @@
   <% @squad_goalkeepers.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2">
     <br>
-    <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+    <div class="card">
       <div class="card-category">
         <b><%= squad_player.player.name %></b>
       </div>
@@ -113,6 +122,7 @@
 </div>
 
 </div>
+<<<<<<< HEAD
 <div class="row flex">
   <% @bench_players.each do |squad_player| %>
   <div class="col-xs-4 col-sm-2">
@@ -137,6 +147,8 @@
   <%= select_tag :active_player, options_for_select(active_players_array) %>
   <%= submit_tag %>
 <% end %>
+=======
+>>>>>>> master
 
 <div class="row">
   <div class="col-xs-12 text-center">
@@ -145,8 +157,42 @@
     </div>
   </div>
 </div>
+</div>
+
+<!-- BENCH (right-side)-->
+
+<div class="col-xs-12 col-sm-4">
+
+  <div class="row flex">
+    <div class="col-sm-6">
+      <%= form_tag '/account/squad/lineup', method: :get do %>
+      <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
+      <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
+      <%= select_tag :bench_player, options_for_select(bench_players_array) %>
+      <%= select_tag :active_player, options_for_select(active_players_array) %>
+      <%= submit_tag %>
+      <% end %>
 
 
+
+    <% @bench_players.each do |squad_player| %>
+      <div class="card" style="background-image: url('<%= image_path('ball.jpg') %>')" >
+        <div class="card-category">
+          <b><%= squad_player.player.name %></b>
+        </div>
+        <div class="card-description">
+          <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        </div>
+        <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 </div>
 </div>
+<<<<<<< HEAD
+</div>
+=======
+>>>>>>> master

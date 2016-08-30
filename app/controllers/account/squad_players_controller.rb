@@ -40,8 +40,8 @@ class Account::SquadPlayersController < ApplicationController
     end
   end
 
-  def lineup
-    @squad = current_user.squad
+  def change_captain
+
   end
 
   private
