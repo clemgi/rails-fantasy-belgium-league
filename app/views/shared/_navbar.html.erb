@@ -34,13 +34,13 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <span>
-        <%= link_to "Mon équipe", account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        <%= link_to "Mon équipe", account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         </span>
         <span>
-        <%= link_to "Transferts", selection_account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        <%= link_to "Transferts", selection_account_squad_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
         </span>
         <span>
-        <%= link_to "Mes points", account_gameweek_path(:gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn", style: "color: white" %>
+        <%= link_to "Mes points", account_gameweek_path(:gameweek_number), class: "navbar-wagon-item navbar-wagon-button btn" %>
         </span>
           <span>
           <% if current_user.nickname.nil? %>

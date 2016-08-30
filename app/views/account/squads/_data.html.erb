@@ -1,13 +1,10 @@
-
-<!-- BUILD YOUR TEAM -->
 <%= form_tag(selection_account_squad_path, method: "get") do %>
   <%= collection_select(nil, :team_id, @teams, :id, :name, selected: params[:team_id]) %>
   <%= submit_tag "Search", class: "navbar-wagon-item navbar-wagon-button" %>
   <h2><b><%= @team.name %></b></h2>
 <% end %>
 
-
-  <!-- GARDIENS DE BUT -->
+<!-- GARDIENS DE BUT -->
 
 <!-- <div class="container">
   <div class="row">

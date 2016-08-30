@@ -13,16 +13,17 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
 </head>
-<body class="<%= params[:controller] %>-<%= params[:action] %>">
+<body class="<%= params[:controller] %>-<%= params[:action] %> <%= yield :body_class%>">
   <% unless params[:controller] == "pages" && params[:action] == "home" %>
     <%= render 'shared/navbar' %>
   <% end %>
 
   <%= render 'devise/shared/flashes' %>
+
   <%= yield %>
   <%= javascript_include_tag 'application' %>
 
-  <% unless params[:controller] == "pages" && params[:action] == "home" %>
+  <% if params[:controller] == "pages" && params[:action] == "home" %>
     <%= render 'shared/footer' %>
   <% end %>
 </body>
