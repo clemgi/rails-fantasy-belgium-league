@@ -11,9 +11,9 @@ class Account::SquadsController < ApplicationController
     @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }, status: 'active').order("players.name")
     @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }, status: 'active').order("players.name")
 
-   
-    @active_players     = @squad_players.where(status: 'active').order("players.name") 
-    @bench_players      = @squad_players.where(status: 'bench').order("players.name") 
+
+    @active_players     = @squad_players.where(status: 'active').order("players.name")
+    @bench_players      = @squad_players.where(status: 'bench').order("players.name")
   end
 
   def new
@@ -63,10 +63,23 @@ class Account::SquadsController < ApplicationController
     @player_on = SquadPlayer.where(player_id: params[:bench_player]).first
 
     @player_off.status = 'bench'
-    @player_off.save!
-    
     @player_on.status = 'active'
+    @player_off.save!
     @player_on.save!
+
+    team_valid?
+
+    if @team_errors.empty?
+
+      flash[:success] = "Transfer Successful!"
+    else
+      @player_off.status = 'active'
+      @player_on.status = 'bench'
+      @player_off.save!
+      @player_on.save!
+
+      flash[:alert] = @team_errors.first
+    end
 
     redirect_to '/account/squad'
   end
@@ -97,8 +110,8 @@ class Account::SquadsController < ApplicationController
     # params[:squad][:squad_players_attributes] = params[:squad_players_attributes]
 
     # params.require(:squad).permit(
-    #   :name, 
-    #   :budget, 
+    #   :name,
+    #   :budget,
     #   :total_points,
     #   squad_players_attributes: [:player_id]
     # )
@@ -115,5 +128,30 @@ class Account::SquadsController < ApplicationController
   def find_gameweek_number
     @gameweeks = Gameweek.all
     @gameweek_number = @gameweeks.last.gameweek_number
+  end
+
+  def team_valid?
+    @squad_players = @squad.squad_players.joins(:player)
+    @team_errors = []
+
+    unless @squad_players.where(players: { position: 'Keeper'},
+      status: 'active').count == 1
+      @team_errors << 'Must have at least one keeper'
+    end
+    unless @squad_players.where(players: { position: 'Verdediger'},
+      status: 'active').count >= 3
+      @team_errors << 'Must have at least three defenders'
+    end
+    unless @squad_players.where(players: { position: 'Middenvelder'},
+      status: 'active').count >= 3
+      @team_errors << 'Must have at least three midfielders'
+    end
+    unless @squad_players.where(players: { position: 'Aanvaller'},
+      status: 'active').count >= 1
+      @team_errors << 'Must have at least one striker'
+    end
+    unless @squad_players.where(status: 'active').count == 11
+      @team_errors << "Must have 11 active players"
+    end
   end
 end
