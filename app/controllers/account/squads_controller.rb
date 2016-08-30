@@ -59,29 +59,35 @@ class Account::SquadsController < ApplicationController
   end
 
   def lineup
-    @player_off = SquadPlayer.where(player_id: params[:active_player]).first
-    @player_on = SquadPlayer.where(player_id: params[:bench_player]).first
-
-    @player_off.status = 'bench'
-    @player_on.status = 'active'
-    @player_off.save!
-    @player_on.save!
-
-    team_valid?
-
-    if @team_errors.empty?
-
-      flash[:success] = "Transfer Successful!"
+    if deadline?
+      redirect_to '/account/squad'
+      flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
     else
-      @player_off.status = 'active'
-      @player_on.status = 'bench'
+
+      @player_off = SquadPlayer.where(player_id: params[:active_player]).first
+      @player_on = SquadPlayer.where(player_id: params[:bench_player]).first
+
+      @player_off.status = 'bench'
+      @player_on.status = 'active'
       @player_off.save!
       @player_on.save!
 
-      flash[:alert] = @team_errors.first
-    end
+      team_valid?
 
-    redirect_to '/account/squad'
+      if @team_errors.empty?
+
+        flash[:success] = "Transfer Successful!"
+      else
+        @player_off.status = 'active'
+        @player_on.status = 'bench'
+        @player_off.save!
+        @player_on.save!
+
+        flash[:alert] = @team_errors.first
+      end
+
+      redirect_to '/account/squad'
+    end
   end
 
   def edit
@@ -93,6 +99,18 @@ class Account::SquadsController < ApplicationController
   end
 
   private
+
+  def deadline?
+   start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
+   end_time = Time.utc(*[0, 50, 10, 30, 8, 2016, 2, 243, true, "UTC"]) # monday morning
+
+   if Time.now.between?(start_time, end_time)
+    flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
+    false
+  else
+    true
+   end
+  end
 
   def check_existing_squad
     return unless current_user.squad
