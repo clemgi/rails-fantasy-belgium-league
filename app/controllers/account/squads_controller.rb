@@ -64,15 +64,15 @@ class Account::SquadsController < ApplicationController
       flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
     else
 
-      @player_off = SquadPlayer.where(player_id: params[:active_player]).first
-      @player_on = SquadPlayer.where(player_id: params[:bench_player]).first
+      @player_off = @squad.squad_players.where(player_id: params[:active_player]).first
+      @player_on = @squad.squad_players.where(player_id: params[:bench_player]).first
 
       @player_off.status = 'bench'
       @player_on.status = 'active'
       @player_off.save!
       @player_on.save!
 
-      team_valid?
+      team_valid? # error happens in here
 
       if @team_errors.empty?
 
@@ -101,15 +101,16 @@ class Account::SquadsController < ApplicationController
   private
 
   def deadline?
-   start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
-   end_time = Time.utc(*[0, 50, 10, 30, 8, 2016, 2, 243, true, "UTC"]) # monday morning
+  #  start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
+  #  end_time = Time.utc(*[0, 50, 10, 30, 8, 2016, 2, 243, true, "UTC"]) # monday morning
 
-   if Time.now.between?(start_time, end_time)
-    flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
-    false
-  else
-    true
-   end
+  #  if Time.now.between?(start_time, end_time)
+  #   flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
+  #   false
+  # else
+  #   true
+  #  end
+  false
   end
 
   def check_existing_squad
@@ -169,6 +170,7 @@ class Account::SquadsController < ApplicationController
       @team_errors << 'Must have at least one striker'
     end
     unless @squad_players.where(status: 'active').count == 11
+
       @team_errors << "Must have 11 active players"
     end
   end
