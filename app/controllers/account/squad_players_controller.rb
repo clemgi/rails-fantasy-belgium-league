@@ -1,6 +1,5 @@
 class Account::SquadPlayersController < ApplicationController
 
-
   def create
     if deadline?
       redirect_to selection_account_squad_path

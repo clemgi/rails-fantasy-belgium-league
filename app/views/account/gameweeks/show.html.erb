@@ -1,15 +1,7 @@
 
-<div class="navbar-wagon-item">
-  <div class="dropdown">
-    <ul class="nav nav-tabs nav-justified">
-      <li role="presentation" class="active"><a href="#">Mon équipe</a></li>
-      <li role="presentation"><%= link_to "Transferts", selection_account_squad_path %> </li>
-      <li role="presentation"><%= link_to "Points", account_gameweek_path(:gameweek_number)%></li>
-    </ul>
-  </div>
-</div>
 <div class="text-center">
 <h1><%= current_user.squad.name %> </h1>
+<h2> Points: <%= @squad.total_points %></h2>
 </div>
 <table class="table sortable">
   <thead>
@@ -51,9 +43,9 @@
   </tbody>
 
   <% end %>
-
-
 </table>
-<!-- <div class="panel-footer"></div> -->
+ <div class="panel-footer">
+  <p> Total:  <%= @total_week_points %> <p>
+ </div>
 
 
