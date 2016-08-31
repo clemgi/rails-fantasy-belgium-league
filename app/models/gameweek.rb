@@ -1,17 +1,17 @@
 class Gameweek < ApplicationRecord
   belongs_to :player
-  # before_action :set_active
+  before_action :set_active
   after_create :calculate_final_score
 
 
 
-# def set_active
-#   if player.squad_players.status == "#{"active"}"
-#     true
-#   else
-#     self.day_points = 0
-#   end
-# end
+def set_active
+  if player.squad_players.status == "#{"active"}"
+    true
+  else
+    self.day_points = 0
+  end
+end
 
 
 # Squad.all.each do |squad|
@@ -27,37 +27,6 @@ class Gameweek < ApplicationRecord
 #       puts "Added points for #{squad.name}"
 #     end
 #
-
-
-
-
-
-# create_table "gameweeks", force: :cascade do |t|
-
-#     t.integer  "day_points"
-
-  # def calculate_day_points
-
-  #  if self.day_points.nil?
-  #     self.day_points = points_total
-  #   else
-  #     player.total_points += points_total
-  #   end
-  #   self.save!
-  # end
-
- # def calculate_final_score
- #    points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
-
- #    if player.total_points.nil?
- #      player.total_points = points_total
- #    else
- #      player.total_points += points_total
- #    end
- #    player.save!
- #  end
-
-
 
   def calculate_final_score
     points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
@@ -158,6 +127,32 @@ class Gameweek < ApplicationRecord
   #   end
   #   return points
   # end
+
+# create_table "gameweeks", force: :cascade do |t|
+
+#     t.integer  "day_points"
+
+  # def calculate_day_points
+
+  #  if self.day_points.nil?
+  #     self.day_points = points_total
+  #   else
+  #     player.total_points += points_total
+  #   end
+  #   self.save!
+  # end
+
+ # def calculate_final_score
+ #    points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
+
+ #    if player.total_points.nil?
+ #      player.total_points = points_total
+ #    else
+ #      player.total_points += points_total
+ #    end
+ #    player.save!
+ #  end
+
 
 end
 
