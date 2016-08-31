@@ -25,6 +25,7 @@ class Account::SquadsController < ApplicationController
     @squad.user = current_user
 
     if @squad.save
+      League.where(name: 'Overall').first.users << @squad.user
       redirect_to selection_account_squad_path
     else
       render :new

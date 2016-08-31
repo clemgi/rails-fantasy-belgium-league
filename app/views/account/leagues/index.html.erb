@@ -1,0 +1,12 @@
+<h4>Your leagues:</h4>
+
+<% @leagues.each do |league| %>
+  <%= link_to league.name, account_league_path(league) %>
+<% end %>
+
+
+<%= form_tag account_league_players_path do %>
+  <%= text_field_tag 'league_name'%>
+  <%= submit_tag "+", class: "btn-medium" %>
+<% end %>
+
