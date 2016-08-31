@@ -1,5 +1,5 @@
 .card-grid {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -25,24 +25,29 @@
   .btn {
     width: 100%;
     z-index: 100;
-    margin-top: 75px;
     opacity: 0;
+    margin-top: -40px;
+    position:relative;
   }
   p {
     font-size: 14px;
     margin: 0;
+    height: 40px;
   }
-  em {
+  .card-price {
     font-size: 14px;
+    margin-top: 86px;
   }
 }
 
 .card-avatar-team {
-  max-width: 60px;
+  max-width: 70px;
+  max-height: 100px;
   position: absolute;
   top: 50px;
   left: 50%;
   margin-left: -30px;
+  opacity: 0.7;
 }
 
 .background_default {
