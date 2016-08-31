@@ -3,17 +3,20 @@
     <!-- <p><b>Gardiens de but</b></p> -->
     <% @squad_goalkeepers.each do |squad_player| %>
     <div class="col-xs-4 col-sm-2">
-      <br>
-      <div class="card">
-        <div class="card-category">
-          <b><%= squad_player.player.name %></b>
-        </div>
-        <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
-        <div class="card-description">
-          <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
-          <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-          <%= submit_tag "Retirer", class: "btn btn-medium" %>
-          <% end %>
+      <div class="card-grid">
+        <div class="card">
+          <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+          <div class="card-description">
+            <p>
+              <strong>
+                <%= squad_player.player.name %>
+              </strong>
+            </p>
+            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+              <%= submit_tag "Retirer", class: "btn btn-md btn-danger" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -30,7 +33,7 @@
         <div class="card-category">
           <b><%= squad_player.player.name %></b>
         </div>
-        <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
+        <%= image_tag get_team_logo(squad_player), class: 'card-user card-avatar-team' %>
         <div class="card-description">
         <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
           <%= submit_tag "Retirer", class: "btn btn-medium" %>
@@ -58,7 +61,7 @@
           <% end %>
         <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
         </div>
-        <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
+        <%= image_tag get_team_logo(squad_player), class: 'card-user card-avatar-team' %>
       </div>
     </div>
     <% end %>
@@ -74,7 +77,7 @@
         <div class="card-category">
           <b><%= squad_player.player.name %></b>
         </div>
-        <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
+        <%= image_tag get_team_logo(squad_player), class: 'card-user card-avatar-team' %>
         <div class="card-description">
           <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
           <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
