@@ -1,65 +1,19 @@
 class Gameweek < ApplicationRecord
   belongs_to :player
-  # before_action :set_active
   after_create :calculate_final_score
 
 
-
-# def set_active
-#   if player.squad_players.status == "#{"active"}"
-#     true
-#   else
-#     self.day_points = 0
-#   end
-# end
-
-
-# Squad.all.each do |squad|
-#       squad.squad_players.where(status: 'active').each do |squad_player|
-#         gameweek = squad_player.player.gameweeks.where(gameweek_number: 4).first
-#         if squad.total_points.nil?
-#           squad.total_points = gameweek.day_points
-#         else
-#         squad.total_points += gameweek.day_points
-#         end
-#       end
-#       squad.save!
-#       puts "Added points for #{squad.name}"
-#     end
-#
-
-
-
-
-
-# create_table "gameweeks", force: :cascade do |t|
-
-#     t.integer  "day_points"
-
-  # def calculate_day_points
-
-  #  if self.day_points.nil?
-  #     self.day_points = points_total
-  #   else
-  #     player.total_points += points_total
-  #   end
-  #   self.save!
-  # end
-
- # def calculate_final_score
- #    points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
-
- #    if player.total_points.nil?
- #      player.total_points = points_total
- #    else
- #      player.total_points += points_total
- #    end
- #    player.save!
- #  end
-
+  def set_active
+    if player.squad_players.status == "#{"active"}"
+      true
+    else
+      self.day_points = 0
+    end
+  end
 
 
   def calculate_final_score
+    set_active
     points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
 
     if self.day_points.nil?
@@ -72,6 +26,7 @@ class Gameweek < ApplicationRecord
 
 
   def points_minutes(minutes_played)
+
     if minutes_played == 0
       -2
     elsif minutes_played > 60
@@ -146,19 +101,6 @@ class Gameweek < ApplicationRecord
     end
     return points
   end
-
-  # TODO add to the total point
-  # def points_assist
-  #   if player.position == "#{"Aanvaller"}"
-  #     points = (self.assist)*4
-  #   elsif player.position == "#{"Midfielder"}"
-  #     points = (self.assist)*3
-  #   else
-  #     points = (self.assist)*4
-  #   end
-  #   return points
-  # end
-
 end
 
 
