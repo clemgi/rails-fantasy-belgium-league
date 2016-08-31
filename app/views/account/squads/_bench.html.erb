@@ -1,0 +1,87 @@
+<div class="row flex">
+  <div class="col-sm-6">
+    <%= form_tag '/account/squad/lineup', method: :get do %>
+    <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
+    <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
+    <%= select_tag :bench_player, options_for_select(bench_players_array) %>
+    <%= select_tag :active_player, options_for_select(active_players_array) %>
+    <%= submit_tag %>
+    <% end %>
+  </div>
+</div>
+
+<div class="flex">
+  <% @bench_goalkeepers.each do |squad_player| %>
+    <div class="card-grid">
+      <div class="card">
+        <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+        <div class="card-description">
+          <p>
+            <strong>
+              <%= squad_player.player.name %>
+            </strong>
+          </p>
+          <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+          <em>Gardien</em>
+        </div>
+      </div>
+    </div>
+     <% end %>
+</div>
+
+<div class="flex">
+  <% @bench_defenders.each do |squad_player| %>
+    <div class="card-grid">
+      <div class="card">
+        <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+        <div class="card-description">
+          <p>
+            <strong>
+              <%= squad_player.player.name %>
+            </strong>
+          </p>
+          <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+          <em>Défenseur</em>
+        </div>
+      </div>
+    </div>
+     <% end %>
+</div>
+
+<div class="flex">
+  <% @bench_midfields.each do |squad_player| %>
+    <div class="card-grid">
+      <div class="card">
+        <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+        <div class="card-description">
+          <p>
+            <strong>
+              <%= squad_player.player.name %>
+            </strong>
+          </p>
+          <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+          <em>Milieu</em>
+        </div>
+      </div>
+    </div>
+     <% end %>
+</div>
+
+<div class="flex">
+  <% @bench_forwards.each do |squad_player| %>
+    <div class="card-grid">
+      <div class="card">
+        <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+        <div class="card-description">
+          <p>
+            <strong>
+              <%= squad_player.player.name %>
+            </strong>
+          </p>
+          <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+          <em>Attaquant</em>
+        </div>
+      </div>
+    </div>
+     <% end %>
+</div>
