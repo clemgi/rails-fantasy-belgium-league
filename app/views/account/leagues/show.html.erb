@@ -1,28 +1,39 @@
-<h4><%= @league.name %></h4>
 
-<table>
-  <tr>
-    <td>
-      Position
-    </td>
-    <td>
-      Name
-    </td>
-    <td>
-      Total Points
-    </td>
-  </tr>
-  <% @league.users.each_with_index do |user, i| %>
-   <tr>
-    <td>
-      <%= i + 1 %>
-    </td>
-    <td>
-      <%= user.email %>
-    </td>
-    <td>
-      <%= user.squad.total_points %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="profile-content">
+  <div class="profile-header">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4><%= @league.name %></h4>
+      </div>
+      <div class="col-sm-6">
+        <table class="table sortable">
+          <thead>
+            <tr>
+              <th> Nom
+              </th>
+              <th> Surnom
+              </th>
+              <th> Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @managers.each_with_index do |user, i| %>
+            <tr>
+              <td>
+                <%= i + 1 %>
+              </td>
+              <td>
+                <%= user.nickname %>
+              </td>
+              <td>
+               <%= user.squad.total_points %>
+             </td>
+           </tr>
+         </tbody>
+         <% end %>
+       </table>
+   </div>
+ </div>
+</div>
+</div>

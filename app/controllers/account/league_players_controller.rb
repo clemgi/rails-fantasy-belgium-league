@@ -2,13 +2,17 @@ class Account::LeaguePlayersController < ApplicationController
 
   def create
     if League.where(name: params[:league_name]).empty?
-      flash[:error] = 'No such league'
       @leagues = current_user.leagues
-      render 'account/leagues/index'
+      flash[:alert] = "Cette ligue n'existe pas"
+      # render 'account/leagues/index'
+      redirect_to account_leagues_path
+
     else
       @league = League.where(name: params[:league_name]).first
-      @league.users << current_user
-      @league.save!
+      unless @league.users.include?(current_user)
+        @league.users << current_user
+        @league.save!
+      end
       redirect_to account_league_path(@league)
     end
   end
