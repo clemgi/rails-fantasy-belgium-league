@@ -4,22 +4,23 @@ class Gameweek < ApplicationRecord
 
 
   def set_active
-    if player.squad_players.status == "#{"active"}"
-      true
-    else
-      self.day_points = 0
-    end
+
   end
 
 
   def calculate_final_score
-    set_active
-    points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
+    if player.squad_players.status == "active"
+      points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
+
 
     if self.day_points.nil?
       self.day_points = points_total
     else
       self.day_points += points_total
+    end
+
+    else
+      self.day_points = 0
     end
     self.save!
   end

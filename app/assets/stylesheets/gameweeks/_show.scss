@@ -1,9 +1,9 @@
 table tr.oddrow {
-    background-color: white;
+  background-color: white;
 }
 
 table tr.evenrow {
-    background: rgb(0, 200, 88);
+  background: white;
 }
 
 table tr td:hover{
@@ -12,6 +12,70 @@ table tr td:hover{
 }
 
 .panel-footer p {
-   text-align: right;
-   font-size: 20px;
+ text-align: right;
+ font-size: 20px;
 }
+
+.title.text-center h2 {
+  color: red;
+}
+
+.btn-plus {
+  color: white;
+  border: 1px solid #009834;
+  background-color: #009834;
+  border-radius: 2pt;
+  font-weight: lighter;
+}
+
+.leagues-add {
+  width: 300px;
+  height: 150px;
+  margin: 20px auto;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5pt;
+  box-shadow: 1px 1px 1px rgba(1, 1 ,1, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leagues {
+  width: 300px;
+  min-height: 150px;
+  margin: 20px auto;
+  background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5pt;
+  box-shadow: 1px 1px 1px rgba(1, 1 ,1, 0.5);
+  a {
+    box-shadow: 1px 1px 1px rgba(1, 1 ,1, 0.5);
+    margin: 10px 0;
+    background: #009834;
+    color: white;
+    padding: 10px;
+    border-radius: 2pt;
+    text-decoration: none;
+    transition: all 200ms ease;
+    &:hover {
+      box-shadow: 2px 2px 2px rgba(1, 1 ,1, 0.5);
+    }
+  }
+
+}
+
+.league {
+  height: 30px;
+  width: 150px;
+  margin: 20px auto;
+  transform: scale(1);
+  transition: all 200ms ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
