@@ -19,6 +19,9 @@
           <%= link_to "Mes Points", account_gameweek_path(@gameweek_number) %>
         </li>
         <li>
+          <%= link_to "Leagues", account_leagues_path %>
+        </li>
+        <li>
           <% if current_user.nickname.nil? %>
             <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
           <% else %>
