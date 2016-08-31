@@ -15,6 +15,7 @@
 .banner h1{
   font-size: 50px;
   font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(#000, 0.8);
 }
 
 .banner p{
@@ -22,6 +23,7 @@
   font-weight: lighter;
   margin-bottom: 50px;
   margin-top:25px;
+  text-shadow: 1px 1px 5px rgba(#000, 0.8);
 }
 
 #search_bar {
@@ -40,4 +42,28 @@
 
 .flaticon p{
   padding-bottom: 66px;
+}
+
+.home-title-animation {
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+    animation: in 10s ease-in-out forwards infinite;
+    animation-delay: 1s;
+    letter-spacing: 20px;
+  }
+
+  @keyframes in {
+    0% {
+      letter-spacing: 20px;
+    }
+    50% {
+      letter-spacing: 5px;
+    }
+    100% {
+      letter-spacing: 20px;
+    }
+  }
+
 }

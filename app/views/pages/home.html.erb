@@ -1,28 +1,24 @@
 <div class="banner" style="background-image:url('<%= image_path @background %>')">
 
   <div class="banner-content text-center">
-    <h1>Fantasy ProLeague</h1>
+    <div class="home-title-animation">
+      <h1>Fantasy ProLeague</h1>
+    </div>
     <p>Crée ton équipe et remporte le titre</p>
-    <%#= form_tag("/places", method: "get") do %>
-    <%#= text_field_tag :city, nil, class:"home-search", placeholder: 'City' %>
 
-    <%#= date_field_tag :event_date, nil, class: "home-search" %>
-
-    <%=link_to 'Commencer à jouer', new_account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
-    <%#= submit_tag("submit", class:"search-btn navbar-wagon-item navbar-wagon-button btn") %>
     <% unless user_signed_in? %>
-
-    <%= link_to "Se connecter", new_user_session_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "Se connecter", new_user_session_path, class:"btn btn-default btn-lg" %>
     <% end %>
-    <%# end %>
-    <!--     <a href="http://lmgtfy.com/?q=google" target="_blank" class=" btn btn-primary btn-lg">Get started</a> -->
+    <%=link_to 'Commencer à jouer', new_account_squad_path, class:"btn btn-success btn-lg" %>
+
   </div>
 </div>
+
 <div class="text-center padded features">
   <div class="container">
     <div class="row">
-    <div class = "flaticon">
-      <div class="col-xs-12 col-sm-6">
+      <div class="flaticon">
+        <div class="col-xs-12 col-sm-6">
           <%= image_tag('football-field.png') %>
           <h2> Manager </h2>
           <p>Compose ta sélection parmi les joueurs de la Proleague</p>
@@ -41,15 +37,10 @@
      <p> En fonction des matchs du week-end, tes joueurs gagnent des points  </p>
    </div>
    <div class="col-xs-12 col-sm-6">
-   <%= image_tag('football.png') %>
-    <h2> Transferts</h2>
-    <p> Un joueur blessé? Tu as droit à un transfert par semaine </p>
-  </div>
+     <%= image_tag('football.png') %>
+     <h2> Transferts</h2>
+     <p> Un joueur blessé? Tu as droit à un transfert par semaine </p>
+   </div>
+ </div>
 </div>
 </div>
-</div>
-
-
-
-
-
