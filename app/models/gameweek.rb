@@ -1,7 +1,33 @@
 class Gameweek < ApplicationRecord
   belongs_to :player
-
+  # before_action :set_active
   after_create :calculate_final_score
+
+
+
+# def set_active
+#   if player.squad_players.status == "#{"active"}"
+#     true
+#   else
+#     self.day_points = 0
+#   end
+# end
+
+
+# Squad.all.each do |squad|
+#       squad.squad_players.where(status: 'active').each do |squad_player|
+#         gameweek = squad_player.player.gameweeks.where(gameweek_number: 4).first
+#         if squad.total_points.nil?
+#           squad.total_points = gameweek.day_points
+#         else
+#         squad.total_points += gameweek.day_points
+#         end
+#       end
+#       squad.save!
+#       puts "Added points for #{squad.name}"
+#     end
+#
+
 
 
 
@@ -138,22 +164,3 @@ end
 
 
 
-  # def calculate
-  #   self.minutes_played = amount_minutes_played
-  #   if self.day_points.nil?
-  #     self.day_points = points_minutes_played(amount_of_minutes)
-  #   else
-  #     self.day_points += points_minutes_played(amount_of_minutes)
-  #  end
-
-  #   self.save!
-  # end
-  # def amount_minutes_played
-  #   if self.gameweek_number == 1
-  #     amount_of_minutes = self.minutes_played
-  #   else
-  #     previous_gameweek_number = self.gameweek_number - 1
-  #     previous_gameweek = Gameweek.find(previous_gameweek_number)
-  #     amount_of_minutes = self.minutes_played - previous_gameweek.minutes_played
-  #   end
-  # end

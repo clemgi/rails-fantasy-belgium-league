@@ -1,6 +1,5 @@
 class Account::SquadsController < ApplicationController
   before_action :set_squad
-  before_action :find_gameweek_number
   before_action :check_existing_squad, only: [:new, :create]
 
   def show
@@ -142,11 +141,6 @@ class Account::SquadsController < ApplicationController
 
   def find_team
     @team = Team.find(params[:team_id])
-  end
-
-  def find_gameweek_number
-    @gameweeks = Gameweek.all
-    @gameweek_number = @gameweeks.last.gameweek_number
   end
 
   def team_valid?
