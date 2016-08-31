@@ -1,5 +1,5 @@
 require 'open-uri'
-Gameweek_number = 5
+Gameweek_number = ENV['GAMEWEEK_NUMBER']
 namespace :scraper do
   desc "Retrieves teams and players and put them in DB"
   task gameweek: [:environment] do
