@@ -1,12 +1,23 @@
-<h4>Your leagues:</h4>
+  <div class="leagues">
+    <h4>Your leagues:</h4>
 
-<% @leagues.each do |league| %>
-  <%= link_to league.name, account_league_path(league) %>
-<% end %>
+    <% @leagues.each do |league| %>
+    <div class="league">
+    <%= link_to account_league_path(league) do %>
+<i class="fa fa-info"></i>
+|
+<span>
+        <%= league.name %>
+</span>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
 
-
-<%= form_tag account_league_players_path do %>
-  <%= text_field_tag 'league_name'%>
-  <%= submit_tag "+", class: "btn-medium" %>
-<% end %>
-
+  <div class="leagues-add">
+    <h4>Add a league</h4>
+    <%= form_tag account_league_players_path do %>
+    <%= text_field_tag 'league_name'%>
+    <%= submit_tag "+", class: "btn-plus" %>
+    <% end %>
+  </div>
