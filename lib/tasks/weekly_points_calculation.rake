@@ -4,7 +4,7 @@ namespace :gameweek_points do
 
     Squad.all.each do |squad|
       squad.squad_players.where(status: 'active').each do |squad_player|
-        gameweek = squad_player.player.gameweeks.where(gameweek_number: 4).first
+        gameweek = squad_player.player.gameweeks.where(gameweek_number: ENV['GAMEWEEK_NUMBER']).first
         if squad.total_points.nil?
           squad.total_points = gameweek.day_points
         else

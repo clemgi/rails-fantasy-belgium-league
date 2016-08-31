@@ -13,7 +13,7 @@
                 <%= squad_player.player.name %>
               </strong>
             </p>
-            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <div class="card-price"> <%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</div>
             <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
               <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
             <% end %>
@@ -39,7 +39,7 @@
                 <%= squad_player.player.name %>
               </strong>
             </p>
-            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <div class="card-price"><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</div>
             <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
               <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
             <% end %>
@@ -63,7 +63,7 @@
                 <%= squad_player.player.name %>
               </strong>
             </p>
-            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <div class="card-price"><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</div>
             <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
               <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
             <% end %>
@@ -87,7 +87,7 @@
                 <%= squad_player.player.name %>
               </strong>
             </p>
-            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <div class="card-price"><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</div>
             <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
               <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
             <% end %>
