@@ -32,10 +32,10 @@
         </div>
         <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
         <div class="card-description">
-          <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
-          <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
           <%= submit_tag "Retirer", class: "btn btn-medium" %>
           <% end %>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
         </div>
       </div>
     </div>
@@ -53,10 +53,10 @@
           <b><%= squad_player.player.name %></b>
         </div>
         <div class="card-description">
-                          <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
-        <%= submit_tag "Retirer", class: "btn btn-medium" %>
-        <% end %>
-          <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
+        <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+          <%= submit_tag "Retirer", class: "btn btn-medium text-center" %>
+          <% end %>
+        <%= squad_player.player.price %> M € / <%= squad_player.player.total_points %>Pts</br>
         </div>
         <%= image_tag get_team_logo(squad_player), :class => 'card-user avatar-team' %>
       </div>

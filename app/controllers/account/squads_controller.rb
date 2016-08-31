@@ -23,6 +23,7 @@ class Account::SquadsController < ApplicationController
     @squad = Squad.new(squad_params)
     @squad.budget = 100
     @squad.user = current_user
+    @squad.total_points = 0
 
     if @squad.save
       redirect_to selection_account_squad_path

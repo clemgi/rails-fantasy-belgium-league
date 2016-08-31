@@ -1,13 +1,13 @@
 {
   "Zulte Waregem": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=103844&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "3",
-    "lost": "0",
+    "lost": "1",
     "draw": "1",
     "gf": "7",
-    "ga": "1",
-    "gd": "6",
+    "ga": "2",
+    "gd": "5",
     "points": "10",
     "players": [
       {
@@ -158,14 +158,14 @@
   },
   "Anderlecht": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4209&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "2",
     "lost": "0",
-    "draw": "2",
-    "gf": "9",
-    "ga": "4",
+    "draw": "3",
+    "gf": "11",
+    "ga": "6",
     "gd": "5",
-    "points": "8",
+    "points": "9",
     "players": [
       {
         "name": "Frank Boeckx",
@@ -276,13 +276,19 @@
         "price": 0
       },
       {
-        "name": "Diego Capel",
+        "name": "Massimo Bruno",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Sofiane Hanni",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Diego Capel",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -318,13 +324,13 @@
         "price": 0
       },
       {
-        "name": "Osval Alvarez",
+        "name": "Jorn Vancamp",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Jorn Vancamp",
+        "name": "Osval Alvarez",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -369,15 +375,21 @@
   },
   "AA Gent": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4301&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "2",
     "lost": "0",
-    "draw": "2",
-    "gf": "7",
-    "ga": "4",
+    "draw": "3",
+    "gf": "9",
+    "ga": "6",
     "gd": "3",
-    "points": "8",
+    "points": "9",
     "players": [
+      {
+        "name": "Jacob Rinne",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
       {
         "name": "Brian Vandenbussche",
         "position": "Keeper",
@@ -391,31 +403,7 @@
         "price": 0
       },
       {
-        "name": "Jacob Rinne",
-        "position": "Keeper",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Noël Naby Soumah",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Siebe Horemans",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Rami Gershon",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Nana Asare",
+        "name": "Lasse Nielsen",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -427,7 +415,31 @@
         "price": 0
       },
       {
-        "name": "Lasse Nielsen",
+        "name": "Nana Asare",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Stefan Mitrovic",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Ofir Davidazde",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Noël Naby Soumah",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Rami Gershon",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -439,8 +451,14 @@
         "price": 0
       },
       {
-        "name": "Stefan Mitrovic",
+        "name": "Siebe Horemans",
         "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Thomas Matton",
+        "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
@@ -469,12 +487,6 @@
         "price": 0
       },
       {
-        "name": "Danijel Milicevic",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Brecht Dejaegere",
         "position": "Middenvelder",
         "total_points": 0,
@@ -493,13 +505,13 @@
         "price": 0
       },
       {
-        "name": "Thomas Matton",
+        "name": "Hannes Van der Bruggen",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Hannes Van der Bruggen",
+        "name": "Danijel Milicevic",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -550,15 +562,21 @@
   },
   "Charleroi": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4500&cid=48&sid=491",
-    "played": "4",
-    "won": "2",
+    "played": "5",
+    "won": "3",
     "lost": "0",
     "draw": "2",
-    "gf": "3",
-    "ga": "1",
-    "gd": "2",
-    "points": "8",
+    "gf": "6",
+    "ga": "3",
+    "gd": "3",
+    "points": "11",
     "players": [
+      {
+        "name": "Parfait Mandanda",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
       {
         "name": "Valentin Baume",
         "position": "Keeper",
@@ -572,8 +590,8 @@
         "price": 0
       },
       {
-        "name": "Parfait Mandanda",
-        "position": "Keeper",
+        "name": "Ethan Poulain",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
@@ -626,37 +644,7 @@
         "price": 0
       },
       {
-        "name": "Enes Saglik",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Mamadou Fall",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Cristian Benavente",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Clément Tainmont",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Christophe Diandy",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Sotirios Ninis",
+        "name": "Damien Marcq",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -668,14 +656,56 @@
         "price": 0
       },
       {
+        "name": "Clément Tainmont",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Clinton Mata",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Damien Marcq",
+        "name": "Enes Saglik",
         "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Christophe Diandy",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Cristian Benavente",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Mamadou Fall",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Sotirios Ninis",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "David Pollet",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Roman Ferber",
+        "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
@@ -696,31 +726,19 @@
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
-      },
-      {
-        "name": "David Pollet",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Roman Ferber",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
       }
     ]
   },
   "Racing Genk": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=5002&cid=48&sid=491",
-    "played": "4",
-    "won": "2",
+    "played": "5",
+    "won": "3",
     "lost": "1",
     "draw": "1",
-    "gf": "7",
+    "gf": "8",
     "ga": "4",
-    "gd": "3",
-    "points": "7",
+    "gd": "4",
+    "points": "10",
     "players": [
       {
         "name": "Nordin Jackers",
@@ -888,14 +906,14 @@
   },
   "Oostende": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=100078&cid=48&sid=491",
-    "played": "4",
-    "won": "2",
+    "played": "5",
+    "won": "3",
     "lost": "1",
     "draw": "1",
-    "gf": "5",
-    "ga": "4",
-    "gd": "1",
-    "points": "7",
+    "gf": "7",
+    "ga": "5",
+    "gd": "2",
+    "points": "10",
     "players": [
       {
         "name": "Jean Chopin",
@@ -1081,14 +1099,14 @@
   },
   "Club Brugge": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4035&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "2",
     "lost": "2",
-    "draw": "0",
-    "gf": "4",
-    "ga": "3",
+    "draw": "1",
+    "gf": "6",
+    "ga": "5",
     "gd": "1",
-    "points": "6",
+    "points": "7",
     "players": [
       {
         "name": "Jens Teunckens",
@@ -1256,14 +1274,14 @@
   },
   "Standard": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=300&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "1",
     "lost": "1",
-    "draw": "2",
-    "gf": "4",
-    "ga": "3",
+    "draw": "3",
+    "gf": "6",
+    "ga": "5",
     "gd": "1",
-    "points": "5",
+    "points": "6",
     "players": [
       {
         "name": "Jean-François Gillet",
@@ -1473,14 +1491,14 @@
   },
   "KV Mechelen": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4210&cid=48&sid=491",
-    "played": "4",
-    "won": "1",
+    "played": "5",
+    "won": "2",
     "lost": "1",
     "draw": "2",
-    "gf": "4",
-    "ga": "4",
-    "gd": "0",
-    "points": "5",
+    "gf": "6",
+    "ga": "5",
+    "gd": "1",
+    "points": "8",
     "players": [
       {
         "name": "Anthony Swolfs",
@@ -1654,14 +1672,14 @@
   },
   "Kortrijk": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=102231&cid=48&sid=491",
-    "played": "4",
-    "won": "1",
+    "played": "5",
+    "won": "2",
     "lost": "1",
     "draw": "2",
-    "gf": "4",
-    "ga": "7",
-    "gd": "-3",
-    "points": "5",
+    "gf": "6",
+    "ga": "8",
+    "gd": "-2",
+    "points": "8",
     "players": [
       {
         "name": "Michail Sifakis",
@@ -1817,23 +1835,17 @@
   },
   "STVV": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=102513&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "1",
-    "lost": "2",
+    "lost": "3",
     "draw": "1",
-    "gf": "2",
-    "ga": "4",
-    "gd": "-2",
+    "gf": "3",
+    "ga": "6",
+    "gd": "-3",
     "points": "4",
     "players": [
       {
         "name": "Lucas Pirard",
-        "position": "Keeper",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "William Dutoit",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -1845,8 +1857,8 @@
         "price": 0
       },
       {
-        "name": "Jorge Pulido",
-        "position": "Verdediger",
+        "name": "William Dutoit",
+        "position": "Keeper",
         "total_points": 0,
         "price": 0
       },
@@ -1858,6 +1870,12 @@
       },
       {
         "name": "Dakonam Djene",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Damien Dussaut",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -1882,6 +1900,12 @@
       },
       {
         "name": "Mamadou Bagayoko",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jorge Pulido",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -1953,12 +1977,6 @@
         "price": 0
       },
       {
-        "name": "Yuji Ono",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Iebe Swers",
         "position": "Aanvaller",
         "total_points": 0,
@@ -1983,6 +2001,12 @@
         "price": 0
       },
       {
+        "name": "Yuji Ono",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Nick Proschwitz",
         "position": "Aanvaller",
         "total_points": 0,
@@ -1998,13 +2022,13 @@
   },
   "Eupen": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=105244&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "1",
-    "lost": "2",
+    "lost": "3",
     "draw": "1",
-    "gf": "4",
-    "ga": "8",
-    "gd": "-4",
+    "gf": "6",
+    "ga": "11",
+    "gd": "-5",
     "points": "4",
     "players": [
       {
@@ -2167,15 +2191,21 @@
   },
   "Excel Moeskroen": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=119442&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "1",
-    "lost": "3",
+    "lost": "4",
     "draw": "0",
-    "gf": "4",
-    "ga": "6",
-    "gd": "-2",
+    "gf": "5",
+    "ga": "8",
+    "gd": "-3",
     "points": "3",
     "players": [
+      {
+        "name": "Vagner",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
       {
         "name": "Alen Saric-Hodzic",
         "position": "Keeper",
@@ -2195,8 +2225,8 @@
         "price": 0
       },
       {
-        "name": "Vagner",
-        "position": "Keeper",
+        "name": "Thibaut Peyre",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
@@ -2207,13 +2237,31 @@
         "price": 0
       },
       {
-        "name": "Mickaël Tirpan",
+        "name": "Jérémy Huyghebaert",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Thibaut Peyre",
+        "name": "Martin Selak",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Mërgim Vojvoda",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Noe Dussenne",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Corentin Kocur",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2231,49 +2279,19 @@
         "price": 0
       },
       {
-        "name": "Mërgim Vojvoda",
+        "name": "Mickaël Tirpan",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Jérémy Huyghebaert",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Noe Dussenne",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Martin Selak",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Corentin Kocur",
-        "position": "Verdediger",
+        "name": "Luka Stojanovic",
+        "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Nikola Gulan",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "David Hubert",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Julian Michel",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2285,7 +2303,19 @@
         "price": 0
       },
       {
-        "name": "Luka Stojanovic",
+        "name": "David Hubert",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Karim Essikal",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Julian Michel",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2315,25 +2345,7 @@
         "price": 0
       },
       {
-        "name": "Maksym Bah",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Simon Diedhiou",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Fabrice Olinga",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Frédéric Maciel",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2345,7 +2357,19 @@
         "price": 0
       },
       {
-        "name": "Fejsal Mulic",
+        "name": "Fabrice Olinga",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Maksym Bah",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Frédéric Maciel",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2355,19 +2379,25 @@
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
+      },
+      {
+        "name": "Fejsal Mulic",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
       }
     ]
   },
   "Lokeren": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=4706&cid=48&sid=491",
-    "played": "4",
-    "won": "1",
+    "played": "5",
+    "won": "2",
     "lost": "3",
     "draw": "0",
-    "gf": "3",
-    "ga": "5",
-    "gd": "-2",
-    "points": "3",
+    "gf": "5",
+    "ga": "6",
+    "gd": "-1",
+    "points": "6",
     "players": [
       {
         "name": "Davino Verhulst",
@@ -2448,13 +2478,19 @@
         "price": 0
       },
       {
-        "name": "Nikola Jambor",
+        "name": "Joher Khadim Rassoul",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Sergiy Bolbat",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Nikola Jambor",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2490,8 +2526,8 @@
         "price": 0
       },
       {
-        "name": "Joher Khadim Rassoul",
-        "position": "Middenvelder",
+        "name": "Mehdi Terki",
+        "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
@@ -2526,7 +2562,7 @@
         "price": 0
       },
       {
-        "name": "Mehdi Terki",
+        "name": "Steve de Ridder",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2541,13 +2577,13 @@
   },
   "Waasland-Beveren": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=118772&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "0",
-    "lost": "2",
+    "lost": "3",
     "draw": "2",
-    "gf": "4",
-    "ga": "7",
-    "gd": "-3",
+    "gf": "5",
+    "ga": "9",
+    "gd": "-4",
     "points": "2",
     "players": [
       {
@@ -2740,23 +2776,17 @@
   },
   "Westerlo": {
     "team_url": "/cm/sporza/matchcenter/mc_voetbal/JupilerProLeague1617/2.4982?tid=102290&cid=48&sid=491",
-    "played": "4",
+    "played": "5",
     "won": "0",
-    "lost": "3",
+    "lost": "4",
     "draw": "1",
-    "gf": "5",
-    "ga": "11",
-    "gd": "-6",
+    "gf": "6",
+    "ga": "13",
+    "gd": "-7",
     "points": "1",
     "players": [
       {
         "name": "Kristof Van Hout",
-        "position": "Keeper",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Yannick Verbist",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -2768,19 +2798,13 @@
         "price": 0
       },
       {
+        "name": "Yannick Verbist",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Daniel Christensen",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Alessio Alessandro",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Mitch Apau",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2798,7 +2822,7 @@
         "price": 0
       },
       {
-        "name": "Randal Oto'o",
+        "name": "Gilles Ruyssen",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2810,13 +2834,25 @@
         "price": 0
       },
       {
-        "name": "Gilles Ruyssen",
+        "name": "Hervé Matthys",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Hervé Matthys",
+        "name": "Mitch Apau",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Alessio Alessandro",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Randal Oto'o",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2828,37 +2864,25 @@
         "price": 0
       },
       {
-        "name": "Jarno Molenberghs",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Robin Henkens",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Maxime Annys",
+        "name": "Arno Verschueren",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Nicolas Rommens",
+        "name": "Yoni Buyens",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Khaleem Hyland",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Arno Verschueren",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2872,6 +2896,30 @@
       {
         "name": "Daan Heymans",
         "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Nicolas Rommens",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Maxime Annys",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jarno Molenberghs",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Elton Acolatse",
+        "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
@@ -2901,12 +2949,6 @@
       },
       {
         "name": "Benjamin De Ceulaer",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Elton Acolatse",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
