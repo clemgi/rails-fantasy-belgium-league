@@ -1,0 +1,101 @@
+<div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
+
+    <!-- <p><b>Gardiens de but</b></p> -->
+  <div class="row flex">
+    <% @squad_goalkeepers.each do |squad_player| %>
+    <div class="col-xs-4 col-sm-2">
+      <div class="card-grid">
+        <div class="card">
+          <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+          <div class="card-description">
+            <p>
+              <strong>
+                <%= squad_player.player.name %>
+              </strong>
+            </p>
+            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+              <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
+    <!-- <p><b>Défenseurs</b></p> -->
+    <div class="row flex">
+    <% @squad_defenders.each do |squad_player| %>
+    <div class="col-xs-4 col-sm-2">
+      <div class="card-grid">
+        <div class="card">
+          <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+          <div class="card-description">
+            <p>
+              <strong>
+                <%= squad_player.player.name %>
+              </strong>
+            </p>
+            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+              <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+    <!-- <p><b>Milieux de terrain</b></p> -->
+    <div class="row flex">
+    <% @squad_midfields.each do |squad_player| %>
+    <div class="col-xs-4 col-sm-2">
+      <div class="card-grid">
+        <div class="card">
+          <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+          <div class="card-description">
+            <p>
+              <strong>
+                <%= squad_player.player.name %>
+              </strong>
+            </p>
+            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+              <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+    <!-- <p><b>Attaquants</b></p> -->
+    <div class="row flex">
+    <% @squad_forwards.each do |squad_player| %>
+    <div class="col-xs-4 col-sm-2">
+      <div class="card-grid">
+        <div class="card">
+          <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
+          <div class="card-description">
+            <p>
+              <strong>
+                <%= squad_player.player.name %>
+              </strong>
+            </p>
+            <em><%= squad_player.player.price %> M € — <%= squad_player.player.total_points %>Pts</em>
+            <%= form_tag account_squad_player_path(squad_player), method: :delete do %>
+              <%= submit_tag "Supprimer", class: "btn btn-md btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>

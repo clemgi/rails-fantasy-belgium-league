@@ -1,63 +1,50 @@
-/* Card design */
-.card{
+.card-grid {
+  margin-bottom: 20px;
+}
+
+.card {
   background-color: white;
   position: relative;
-  height: 150px;
-  width: 110px;
+  height: 170px;
+  width: 130px;
   color: black;
   border-radius: 5px;
-  margin-bottom: 20px;
   transition: all 300ms ease;
   opacity: 0.9;
   transform: scale(1) rotate(0deg);
   box-shadow: 0px 0px 0px rgba(1,1,1, 0.5);
+  padding: 10px;
   &:hover {
     opacity: 1;
-    transform: scale(1.01) rotate(0.2deg);
-    box-shadow: 0px 0px 3px rgba(1,1,1, 0.8);
+    transform: scale(1.25) rotate(0.5deg);
+    box-shadow: 0px 0px 5px rgba(1,1,1, 0.6);
     .btn {
       opacity: 1;
     }
   }
   .btn {
     width: 100%;
-    margin: 5px;
-    opacity: 0;
     z-index: 100;
-    position:relative;
+    margin-top: 75px;
+    opacity: 0;
+  }
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+  em {
+    font-size: 14px;
   }
 }
 
-.card-user{
+.card-avatar-team {
+  max-width: 60px;
   position: absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin: auto;
-}
-
-.card-category{
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  font-size: 13px;
-}
-
-.card-description{
-  position: absolute;
-  bottom: 2px;
-  // left: 10px;
-  font-size: 13px;
-  font-style: bold;
+  top: 50px;
+  left: 50%;
+  margin-left: -30px;
 }
 
 .background_default {
   background-image: "background_show.jpeg";
-}
-
-.card-select{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }

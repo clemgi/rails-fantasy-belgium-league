@@ -10,6 +10,11 @@ class Account::SquadsController < ApplicationController
     @squad_midfields    = @squad_players.where(players: { position: "Middenvelder" }, status: 'active').order("players.name")
     @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }, status: 'active').order("players.name")
 
+    @bench_goalkeepers  = @squad_players.where(players: { position: "Keeper" }, status: 'bench').order("players.name")
+    @bench_defenders    = @squad_players.where(players: { position: "Verdediger" }, status: 'bench').order("players.name")
+    @bench_midfields    = @squad_players.where(players: { position: "Middenvelder" }, status: 'bench').order("players.name")
+    @bench_forwards     = @squad_players.where(players: { position: "Aanvaller" }, status: 'bench').order("players.name")
+
 
     @active_players     = @squad_players.where(status: 'active').order("players.name")
     @bench_players      = @squad_players.where(status: 'bench').order("players.name")
