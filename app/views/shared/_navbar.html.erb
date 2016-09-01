@@ -26,12 +26,28 @@
       <ul class="nav-fantasy">
         <li>
           <% if current_user.nickname.nil? %>
-          <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
+
+          <li><%=link_to account_profile_path do %>
+            <div class="nickname_and_squad">
+              <div class="nav-squad">
+                <% if current_user.squad.nil? %>
+                <%= "No squad yet !" %>
+                <% else %>
+                <%= current_user.squad.name %>
+                <% end %>
+              </div>
+              <div class="nav-nickname">
+                <p>C'est quoi ton p'tit nom?</p>
+              </div>
+            </div>
+            <% end %>
+          </li>
+
           <% else %>
           <li><%=link_to account_profile_path do %>
             <div class="nickname_and_squad">
               <div class="nav-squad">
-              <% if current_user.squad.nil? %>
+                <% if current_user.squad.nil? %>
                 <%= "No squad yet !" %>
                 <% else %>
                 <%= current_user.squad.name %>
@@ -41,9 +57,10 @@
                 <%= current_user.nickname %>
               </div>
             </div>
-            <% end %>
 
+            <% end %>
           </li>
+
           <% end %>
         </li>
         <li>
