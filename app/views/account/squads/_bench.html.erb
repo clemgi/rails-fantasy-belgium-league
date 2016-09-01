@@ -1,21 +1,27 @@
-<div class="row flex">
-  <div class="col-sm-6">
-    <%= form_tag '/account/squad/lineup', method: :get do %>
-    <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
-    <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
-    <%= select_tag :bench_player, options_for_select(bench_players_array) %>
-    <%= select_tag :active_player, options_for_select(active_players_array) %>
-    <%= submit_tag %>
-    <% end %>
+<div class="text-center">
+  <%= form_tag '/account/squad/lineup', method: :get do %>
+  <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
+  <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
+  <div class="row">
+    <div class="col-xs-6">Banc</div>
+    <div class="col-xs-6">Joueurs Actifs</div>
   </div>
+  <div class="row">
+    <div class="col-xs-6"><%= select_tag :bench_player, options_for_select(bench_players_array) %></div>
+    <div class="col-xs-6"><%= select_tag :active_player, options_for_select(active_players_array) %></div>
+  </div>
+  <br>
+  <%= submit_tag 'Faire le changement', class: "btn-data" %>
+  <% end %>
 </div>
 
-<!-- <p><b>Gardiens de but</b></p> -->
-  <div class="row flex">
-    <% @bench_goalkeepers.each do |squad_player| %>
-    <div class="col-xs-4 col-sm-2">
+<div class="padded">
+  <!-- <p><b>Gardiens de but</b></p> -->
+  <% @bench_goalkeepers.each do |squad_player| %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="card-grid">
-        <div class="card">
+        <div class="card card-bench">
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -28,17 +34,17 @@
         </div>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
 
 
 
-    <!-- <p><b>Défenseurs</b></p> -->
-    <div class="row flex">
-    <% @bench_defenders.each do |squad_player| %>
-    <div class="col-xs-4 col-sm-2">
+  <!-- <p><b>Défenseurs</b></p> -->
+  <% @bench_defenders.each do |squad_player| %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="card-grid">
-        <div class="card">
+        <div class="card card-bench">
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -51,15 +57,16 @@
         </div>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
 
-    <!-- <p><b>Milieux de terrain</b></p> -->
-    <div class="row flex">
-    <% @bench_midfields.each do |squad_player| %>
-    <div class="col-xs-4 col-sm-2">
+
+  <!-- <p><b>Milieux de terrain</b></p> -->
+  <% @bench_midfields.each do |squad_player| %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="card-grid">
-        <div class="card">
+        <div class="card card-bench">
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -72,15 +79,15 @@
         </div>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
 
-    <!-- <p><b>Attaquants</b></p> -->
-    <div class="row flex">
-    <% @bench_forwards.each do |squad_player| %>
-    <div class="col-xs-4 col-sm-2">
+  <!-- <p><b>Attaquants</b></p> -->
+  <% @bench_forwards.each do |squad_player| %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="card-grid">
-        <div class="card">
+        <div class="card card-bench">
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -93,5 +100,6 @@
         </div>
       </div>
     </div>
-    <% end %>
   </div>
+  <% end %>
+</div>
