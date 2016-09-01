@@ -25,7 +25,7 @@
           <% if current_user.nickname.nil? %>
             <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
           <% else %>
-            <%=link_to "#{current_user.nickname}", account_profile_path %>
+            <li><%=link_to "#{current_user.nickname} / #{current_user.squad.name}", account_profile_path %></li>
           <% end %>
         </li>
         <li>

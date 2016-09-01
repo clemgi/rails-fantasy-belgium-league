@@ -19,8 +19,8 @@ $pitch-column-width: 400px;
     overflow: scroll;
     flex: 1;
     height: 100vh;
-    padding-bottom: 150px;
-    background-color: #6BF178;
+    padding-bottom: 70px;
+    background-color: white;
   }
   &--datas {
     flex: 0 0 $pitch-column-width;
@@ -42,7 +42,7 @@ $pitch-column-width: 400px;
   border-top: 1px solid #e4ecec;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  padding: 5px;
   bottom: 0;
   text-align: center;
 }
