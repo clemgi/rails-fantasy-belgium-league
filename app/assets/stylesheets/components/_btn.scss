@@ -22,3 +22,15 @@
     color: #090909;
   }
 }
+
+.btn-data {
+  padding: 0 20px;
+  border-radius: 15px;
+  background-color: $green;
+  font-size: 14px;
+  border: 2px solid $green;
+}
+.btn-data:hover {
+  background: #61FF7E;
+  border-color: #61FF7E;
+}

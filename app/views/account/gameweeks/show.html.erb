@@ -1,10 +1,11 @@
 
 <div class="title text-center">
-<h1><%= current_user.squad.name %> </h1>
-<h2> Points: <%= @squad.total_points %></h2>
+  <h1><%= current_user.squad.name %> </h1>
+  <h2> Points: <%= @squad.total_points %></h2>
 </div>
-<table class="cell table table-hover table-condensed">
- <thead class="head">
+<div class="wrapper">
+  <table class="cell table table-hover table-condensed">
+   <thead class="head">
     <tr>
       <th> Nom</th>
       <th>Equipe</th>
@@ -44,10 +45,10 @@
 
   <% end %>
 </table>
- <div class="panel-footer">
+<div class="panel-footer">
   <p> Total:  <%= @total_week_points %> <p>
- </div>
-
+  </div>
+</div>
 
 
 
