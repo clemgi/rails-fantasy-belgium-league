@@ -330,25 +330,7 @@
         "price": 0
       },
       {
-        "name": "Osval Alvarez",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Nathan Kabasele",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Idrissa Sylla",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Stefano Okaka Chuka",
+        "name": "Hamdi Harbaoui",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -360,13 +342,37 @@
         "price": 0
       },
       {
-        "name": "Frank Acheampong",
+        "name": "Nathan Kabasele",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Dodi Lukebakio",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Osval Alvarez",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Stefano Okaka Chuka",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Frank Acheampong",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Idrissa Sylla",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -385,7 +391,7 @@
     "points": "9",
     "players": [
       {
-        "name": "Jacob Rinne",
+        "name": "Yannick Thoelen",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -397,8 +403,32 @@
         "price": 0
       },
       {
-        "name": "Yannick Thoelen",
+        "name": "Jacob Rinne",
         "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Nana Asare",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Rami Gershon",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Noël Naby Soumah",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jérémy Taravel",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
@@ -415,37 +445,7 @@
         "price": 0
       },
       {
-        "name": "Nana Asare",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Stefan Mitrovic",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Ofir Davidazde",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Noël Naby Soumah",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Rami Gershon",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Jérémy Taravel",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -457,13 +457,13 @@
         "price": 0
       },
       {
-        "name": "Thomas Matton",
-        "position": "Middenvelder",
+        "name": "Ofir Davidazde",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Sven Kums",
+        "name": "Thomas Foket",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -475,25 +475,7 @@
         "price": 0
       },
       {
-        "name": "Thomas Foket",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Rob Schoofs",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Brecht Dejaegere",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Lucas Schoofs",
+        "name": "Sven Kums",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -505,13 +487,43 @@
         "price": 0
       },
       {
-        "name": "Hannes Van der Bruggen",
+        "name": "Thomas Matton",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Lucas Schoofs",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Danijel Milicevic",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Brecht Dejaegere",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Hannes Van der Bruggen",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Rabiu Ibrahim",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Rob Schoofs",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -741,6 +753,12 @@
     "points": "10",
     "players": [
       {
+        "name": "Marco Bizot",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Nordin Jackers",
         "position": "Keeper",
         "total_points": 0,
@@ -753,13 +771,31 @@
         "price": 0
       },
       {
-        "name": "Marco Bizot",
-        "position": "Keeper",
+        "name": "Sébastien Dewaest",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Timothy Castagne",
+        "name": "Rubin Seigers",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Dries Wouters",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Sandy Walsh",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jere Uronen",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -777,31 +813,7 @@
         "price": 0
       },
       {
-        "name": "Sébastien Dewaest",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Rubin Seigers",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Jere Uronen",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Sandy Walsh",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Dries Wouters",
+        "name": "Timothy Castagne",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -813,25 +825,7 @@
         "price": 0
       },
       {
-        "name": "Yoni Buyens",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Thomas Buffel",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Wilfred Ndidi",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Neeskens Kebano",
+        "name": "Tino-Sven Sušic",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -843,7 +837,7 @@
         "price": 0
       },
       {
-        "name": "Alejandro Pozuelo",
+        "name": "Wilfred Ndidi",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -855,7 +849,31 @@
         "price": 0
       },
       {
+        "name": "Yoni Buyens",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Bryan Heynen",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Alejandro Pozuelo",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Thomas Buffel",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Neeskens Kebano",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -873,13 +891,19 @@
         "price": 0
       },
       {
-        "name": "Leandro Trossard",
+        "name": "Holly Tshimanga",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Mbwana Aly Samatta",
+        "name": "Dante Vanzeir",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Leandro Trossard",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -891,13 +915,7 @@
         "price": 0
       },
       {
-        "name": "Holly Tshimanga",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Dante Vanzeir",
+        "name": "Mbwana Aly Samatta",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2201,7 +2219,7 @@
     "points": "3",
     "players": [
       {
-        "name": "Vagner",
+        "name": "Matej Delac",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -2213,20 +2231,14 @@
         "price": 0
       },
       {
-        "name": "Matej Delac",
-        "position": "Keeper",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Théo Defourny",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Thibaut Peyre",
-        "position": "Verdediger",
+        "name": "Vagner",
+        "position": "Keeper",
         "total_points": 0,
         "price": 0
       },
@@ -2237,25 +2249,7 @@
         "price": 0
       },
       {
-        "name": "Jérémy Huyghebaert",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Martin Selak",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Mërgim Vojvoda",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Noe Dussenne",
+        "name": "Mickaël Tirpan",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2279,20 +2273,32 @@
         "price": 0
       },
       {
-        "name": "Mickaël Tirpan",
+        "name": "Mërgim Vojvoda",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Luka Stojanovic",
-        "position": "Middenvelder",
+        "name": "Noe Dussenne",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Nikola Gulan",
-        "position": "Middenvelder",
+        "name": "Martin Selak",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Thibaut Peyre",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jérémy Huyghebaert",
+        "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
@@ -2309,13 +2315,25 @@
         "price": 0
       },
       {
+        "name": "Julian Michel",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Nikola Gulan",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Karim Essikal",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Julian Michel",
+        "name": "Luka Stojanovic",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2339,7 +2357,7 @@
         "price": 0
       },
       {
-        "name": "Valentín Viola",
+        "name": "Maksym Bah",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2357,13 +2375,13 @@
         "price": 0
       },
       {
-        "name": "Fabrice Olinga",
+        "name": "Valentín Viola",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Maksym Bah",
+        "name": "Roman Ferber",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2382,6 +2400,12 @@
       },
       {
         "name": "Fejsal Mulic",
+        "position": "Aanvaller",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Fabrice Olinga",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0
@@ -2587,13 +2611,19 @@
     "points": "2",
     "players": [
       {
+        "name": "Merveille Goblet",
+        "position": "Keeper",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Laurent Henkinet",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Merveille Goblet",
+        "name": "László Köteles",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -2605,19 +2635,7 @@
         "price": 0
       },
       {
-        "name": "Jonathan Buatu",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Niels de Schutter",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Valtteri Moren",
+        "name": "Maximiliano Caufriez",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2641,7 +2659,25 @@
         "price": 0
       },
       {
+        "name": "Niels de Schutter",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
         "name": "Laurent Jans",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Jonathan Buatu",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Maxim Nys",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2653,14 +2689,14 @@
         "price": 0
       },
       {
-        "name": "Maximiliano Caufriez",
+        "name": "Valtteri Moren",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Maxim Nys",
-        "position": "Verdediger",
+        "name": "Matheus Storck",
+        "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
@@ -2683,12 +2719,6 @@
         "price": 0
       },
       {
-        "name": "Julian Michel",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Floriano Vanzo",
         "position": "Middenvelder",
         "total_points": 0,
@@ -2701,7 +2731,13 @@
         "price": 0
       },
       {
-        "name": "Matheus Storck",
+        "name": "Nana Opoku Ampomah",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Julian Michel",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2713,8 +2749,8 @@
         "price": 0
       },
       {
-        "name": "Nana Opoku Ampomah",
-        "position": "Middenvelder",
+        "name": "Aleksandar Boljevic",
+        "position": "Aanvaller",
         "total_points": 0,
         "price": 0
       },
@@ -2761,12 +2797,6 @@
         "price": 0
       },
       {
-        "name": "Aleksandar Boljevic",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Ronnie Schwartz",
         "position": "Aanvaller",
         "total_points": 0,
@@ -2786,13 +2816,13 @@
     "points": "1",
     "players": [
       {
-        "name": "Kristof Van Hout",
+        "name": "Koen Van Langendonck",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Koen Van Langendonck",
+        "name": "Kristof Van Hout",
         "position": "Keeper",
         "total_points": 0,
         "price": 0
@@ -2804,19 +2834,25 @@
         "price": 0
       },
       {
-        "name": "Daniel Christensen",
+        "name": "Mitch Apau",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
-        "name": "Igor Lolo",
+        "name": "Jordan Mustoe",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Filip Daems",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Daniel Christensen",
         "position": "Verdediger",
         "total_points": 0,
         "price": 0
@@ -2834,18 +2870,6 @@
         "price": 0
       },
       {
-        "name": "Hervé Matthys",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Mitch Apau",
-        "position": "Verdediger",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Alessio Alessandro",
         "position": "Verdediger",
         "total_points": 0,
@@ -2858,8 +2882,20 @@
         "price": 0
       },
       {
-        "name": "Jordan Mustoe",
+        "name": "Hervé Matthys",
         "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Igor Lolo",
+        "position": "Verdediger",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Yoni Buyens",
+        "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
@@ -2876,19 +2912,7 @@
         "price": 0
       },
       {
-        "name": "Yoni Buyens",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
         "name": "Khaleem Hyland",
-        "position": "Middenvelder",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Jore Trompet",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2906,13 +2930,19 @@
         "price": 0
       },
       {
-        "name": "Maxime Annys",
+        "name": "Jore Trompet",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
       },
       {
         "name": "Jarno Molenberghs",
+        "position": "Middenvelder",
+        "total_points": 0,
+        "price": 0
+      },
+      {
+        "name": "Maxime Annys",
         "position": "Middenvelder",
         "total_points": 0,
         "price": 0
@@ -2937,12 +2967,6 @@
       },
       {
         "name": "Eric Lanini",
-        "position": "Aanvaller",
-        "total_points": 0,
-        "price": 0
-      },
-      {
-        "name": "Eduards Visnakovs",
         "position": "Aanvaller",
         "total_points": 0,
         "price": 0

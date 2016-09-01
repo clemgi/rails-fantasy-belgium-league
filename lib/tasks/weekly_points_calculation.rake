@@ -14,6 +14,11 @@ namespace :gameweek_points do
       squad.save!
       puts "Added points for #{squad.name}"
     end
+
+    Player.all.each do |player|
+      player.calculate_total_points
+    end
   end
 end
+
 

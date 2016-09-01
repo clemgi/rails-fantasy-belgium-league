@@ -3,26 +3,24 @@ class Gameweek < ApplicationRecord
   after_create :calculate_final_score
 
 
-  def set_active
+  def calculate_final_score
+    # if player.squad_players.status == "#{"active"}"
+      points_total = calculate_gameweek_score
 
+      if self.day_points.nil?
+        self.day_points = points_total
+      else
+        self.day_points += points_total
+      end
+
+    # else
+    #   self.day_points = 0
+    # end
+    self.save!
   end
 
-
-  def calculate_final_score
-    if player.squad_players.status == "active"
-      points_total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
-
-
-    if self.day_points.nil?
-      self.day_points = points_total
-    else
-      self.day_points += points_total
-    end
-
-    else
-      self.day_points = 0
-    end
-    self.save!
+  def calculate_gameweek_score
+    points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
   end
 
 
@@ -38,9 +36,9 @@ class Gameweek < ApplicationRecord
   end
 
   def points_position
-    if player.position == "#{"Aanvaller"}"
+    if player.position == "Aanvaller"
       points = (self.goal)*4
-    elsif player.position == "#{"Midfielder"}"
+    elsif player.position == "Midfielder"
       points = (self.goal)*5
     else
       points = (self.goal)*6
