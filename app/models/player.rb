@@ -37,6 +37,7 @@ class Player < ApplicationRecord
     else
       self.price = 80
     end
+    puts 'Setting price for #{self.name}'
     self.save!
   end
 
