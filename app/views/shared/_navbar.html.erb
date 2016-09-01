@@ -2,30 +2,44 @@
   <%= link_to root_path, class:"navbar-wagon-brand" do  %>
   <%= image_tag 'field-logo.png' %>
   <% end %>
+    <div class="dropdown">
+    <ul class="nav-fantasy-center">
+      <li>
+        <%= link_to "Mon équipe", account_squad_path %>
+      </li>
+      <li>
+        <%= link_to "Transferts", selection_account_squad_path %>
+      </li>
+      <li>
+        <%= link_to "Mes Points", account_gameweek_path(@gameweek_number) %>
+      </li>
+      <li>
+        <%= link_to "Leagues", account_leagues_path %>
+      </li>
+    </ul>
+    </div>
 
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right hidden-xs">
     <% if signed_in? %>
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
+    <div class="dropdown">
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "Mon équipe", account_squad_path %>
-        </li>
-        <li>
-          <%= link_to "Transferts", selection_account_squad_path %>
-        </li>
-        <li>
-          <%= link_to "Mes Points", account_gameweek_path(@gameweek_number) %>
-        </li>
-        <li>
-          <%= link_to "Leagues", account_leagues_path %>
-        </li>
+      <ul class="nav-fantasy">
         <li>
           <% if current_user.nickname.nil? %>
-            <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
+          <%=link_to "C'est quoi ton p'tit nom? ", account_profile_path %>
           <% else %>
-            <li><%=link_to "#{current_user.nickname} / #{current_user.squad.name}", account_profile_path %></li>
+          <li><%=link_to account_profile_path do %>
+            <div class="nickname_and_squad">
+              <div class="nav-squad">
+                <%= current_user.squad.name %>
+              </div>
+              <div class="nav-nickname">
+                <%= current_user.nickname %>
+              </div>
+            </div>
+            <% end %>
+
+          </li>
           <% end %>
         </li>
         <li>
@@ -43,7 +57,6 @@
         </li>
       </ul>
 
-      </div>
     </div>
 
     <% else %>
@@ -54,7 +67,7 @@
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
