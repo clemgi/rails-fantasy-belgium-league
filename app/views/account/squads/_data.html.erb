@@ -37,7 +37,7 @@
   </thead>
   <tbody>
     <!-- GOALKEEPERS -->
-    <% @team_goalkeepers.order(:name).each do |player| %>
+    <% @team_goalkeepers.each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
@@ -64,7 +64,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @team_defenders.order(:name).each do |player| %>
+    <% @team_defenders.each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
@@ -91,7 +91,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @team_midfields.order(:name).each do |player| %>
+    <% @team_midfields.each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
@@ -118,7 +118,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @team_forwards.order(:name).each do |player| %>
+    <% @team_forwards.each do |player| %>
     <tr>
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>

@@ -58,10 +58,10 @@ class Account::SquadsController < ApplicationController
     @squad_forwards     = @squad_players.where(players: { position: "Aanvaller" }).order("players.name")
 
     # available players
-    @team_goalkeepers  = @team_players.where(position: "Keeper").order(:name)
-    @team_defenders    = @team_players.where(position: "Verdediger").order(:name)
-    @team_midfields    = @team_players.where(position: "Middenvelder").order(:name)
-    @team_forwards     = @team_players.where(position: "Aanvaller").order(:name)
+    @team_goalkeepers  = @team_players.where(position: "Keeper").order(:total_points).reverse
+    @team_defenders    = @team_players.where(position: "Verdediger").order(:total_points).reverse
+    @team_midfields    = @team_players.where(position: "Middenvelder").order(:total_points).reverse
+    @team_forwards     = @team_players.where(position: "Aanvaller").order(:total_points).reverse
   end
 
   def lineup
