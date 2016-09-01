@@ -31,7 +31,7 @@ class Account::SquadsController < ApplicationController
     @squad.total_points = 0
 
     if @squad.save
-      League.where(name: 'Generale').first.users << @squad.user
+      League.where(name: 'Générale').first.users << @squad.user
       redirect_to selection_account_squad_path
     else
       render :new
