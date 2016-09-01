@@ -69,7 +69,7 @@ namespace :scraper do
           # We have access to his latest gameweek:
           # old_player.gameweeks.where(gameweek_number: GAMEWEEK_NUMBER-1)
           old_player.gameweeks.where(gameweek_number: Gameweek_number).destroy_all
-          old_gameweek = old_player.gameweeks.where(gameweek_number: Gameweek_number-1).first
+          old_gameweek = old_player.gameweeks.where(gameweek_number: Gameweek_number.to_i-1).first
           new_gameweek = old_player.gameweeks.build(gameweek_number: Gameweek_number,
                                                   player_id: old_player.id)
           latest_lineups = player_info[:start].to_i - old_gameweek.lineups
