@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :set_nickname
+  # after_create :set_nickname
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -39,8 +39,8 @@ class User < ApplicationRecord
 
   private
 
-  def set_nickname
-    self.nickname = "#{self.first_name.downcase}_#{self.last_name.downcase}"
-    self.save!
-  end
+  # def set_nickname
+  #   self.nickname = "#{self.first_name.downcase}_#{self.last_name.downcase}"
+  #   self.save!
+  # end
 end
