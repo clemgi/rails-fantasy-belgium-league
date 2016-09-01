@@ -2,6 +2,7 @@
   <%= link_to root_path, class:"navbar-wagon-brand" do  %>
   <%= image_tag 'field-logo.png' %>
   <% end %>
+  <% if signed_in? %>
   <div class="dropdown">
     <ul class="nav-fantasy-center">
       <li>
@@ -20,7 +21,7 @@
   </div>
 
   <div class="navbar-wagon-right hidden-xs">
-    <% if signed_in? %>
+
     <div class="dropdown">
 
       <ul class="nav-fantasy">
