@@ -16,6 +16,7 @@ namespace :gameweek_points do
     end
 
     Player.all.each do |player|
+      puts "Calculating latest total points for #{player.name}!"
       player.calculate_total_points
       player.set_price
     end
