@@ -3,14 +3,12 @@
     <div class="col-xs-6">Banc</div>
     <div class="col-xs-6">Joueurs Actifs</div>
   </div>
-<div class="remove-boostrap-padding">
   <%= form_tag '/account/squad/lineup', method: :get do %>
   <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
   <% bench_players_array = @bench_players.map { |player| [player.player.name, player.player_id] } %>
   <div class="row">
     <div class="col-xs-6"><%= select_tag :bench_player, options_for_select(bench_players_array) %></div>
     <div class="col-xs-6"><%= select_tag :active_player, options_for_select(active_players_array) %></div>
-  </div>
   </div>
   <br>
   <%= submit_tag 'Faire le changement', class: "btn-data" %>

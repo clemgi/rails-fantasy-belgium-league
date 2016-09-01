@@ -2,7 +2,7 @@
   <%= link_to root_path, class:"navbar-wagon-brand" do  %>
   <%= image_tag 'field-logo.png' %>
   <% end %>
-    <div class="dropdown">
+  <div class="dropdown">
     <ul class="nav-fantasy-center">
       <li>
         <%= link_to "Mon équipe", account_squad_path %>
@@ -17,7 +17,7 @@
         <%= link_to "Leagues", account_leagues_path %>
       </li>
     </ul>
-    </div>
+  </div>
 
   <div class="navbar-wagon-right hidden-xs">
     <% if signed_in? %>
@@ -31,7 +31,11 @@
           <li><%=link_to account_profile_path do %>
             <div class="nickname_and_squad">
               <div class="nav-squad">
+              <% if current_user.squad.nil? %>
+                <%= "No squad yet !" %>
+                <% else %>
                 <%= current_user.squad.name %>
+                <% end %>
               </div>
               <div class="nav-nickname">
                 <%= current_user.nickname %>
@@ -58,10 +62,6 @@
       </ul>
 
     </div>
-
-    <% else %>
-    <%= link_to 'login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-    <%= link_to "Become a manager", new_user_registration_path,  class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% end %>
 
   </div>
