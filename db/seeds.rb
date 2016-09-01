@@ -16,7 +16,7 @@ teams = JSON.parse(data_file)
 
 teams.each do |key, val|
   t = Team.create!(
-    name: key, 
+    name: key,
     played: val['played'],
     won: val['won'],
     draw: val['draw'],
@@ -35,3 +35,8 @@ teams.each do |key, val|
       team_id: t.id)
   end
 end
+
+
+
+
+

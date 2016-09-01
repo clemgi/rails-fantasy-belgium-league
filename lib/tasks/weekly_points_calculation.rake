@@ -17,6 +17,7 @@ namespace :gameweek_points do
 
     Player.all.each do |player|
       player.calculate_total_points
+      player.set_price
     end
   end
 end

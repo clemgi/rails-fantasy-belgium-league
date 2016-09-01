@@ -13,90 +13,35 @@ class Player < ApplicationRecord
     self.save!
   end
 
-    def calculate_final_score
-      total = points_minutes(minutes_played) + points_position + points_clean_sheet + points_match_score + points_yellow_card + points_red_card - points_conceded
-      if player.total_points.nil?
-        player.total_points = total
-      else
-        player.total_points += total
-      end
-    player.save!
-    end
-
-  def points_minutes(minutes_played)
-
-    if minutes_played == 0
-      -2
-    elsif minutes_played > 60
-      2
+  def set_price
+    if self.total_points <= 0
+      self.price = 45
+    elsif
+      self.total_points <= 3
+      self.price = 50
+    elsif
+      self.total_points <= 5
+      self.price = 55
+    elsif
+      self.total_points <= 8
+      self.price = 60
+    elsif
+      self.total_points <= 11
+      self.price = 65
+    elsif
+      self.total_points <= 15
+      self.price = 70
+    elsif
+      self.total_points <= 18
+      self.price = 75
     else
-      1
+      self.price = 80
     end
-  end
-
-  def points_position
-    if player.position == "Aanvaller"
-      points = (gameweek.goal)*4
-    elsif player.position == "Midfielder"
-      points = (gameweek.goal)*5
-    else
-      points = (gameweek.goal)*6
-    end
-    return points
-  end
-
-  def points_clean_sheet
-    if player.team.ga == 0 && player.position == "#{"Verdediger"}"
-      4
-    elsif player.team.ga == 0 && player.position == "#{"Keeper"}"
-      4
-    elsif player.team.ga == 0 && player.position == "#{"Midfielder"}"
-      1
-    else
-      0
-    end
+    self.save!
   end
 
 
-  def points_match_score
-    if player.team.won == 0 && player.team.draw == 1
-      1
-    elsif player.team.won == 0 && player.team.draw == 0
-      -1
-    else
-      2
-    end
-  end
 
 
-  def points_yellow_card
-    if gameweek.yellow_card == 1
-      -1
-    elsif gameweek.yellow_card == 2
-      -3
-    else
-      0
-    end
-  end
 
-
-  def points_red_card
-    if gameweek.red_card == 1
-      -3
-    else
-      0
-    end
-  end
-
-  def points_conceded
-
-    if player.team.ga.even? && player.position == "#{"Verdediger"}"
-      points = player.team.ga / 2
-    elsif player.team.ga.even? && player.position == "#{"Keeper"}"
-      points = player.team.ga / 2
-    else
-      points = 0
-    end
-    return points
-  end
 end
