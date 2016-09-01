@@ -79,3 +79,12 @@ table tr td:hover{
   }
 }
 
+.width-adjust {
+width: 800px !important;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
