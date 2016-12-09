@@ -16,9 +16,10 @@ Rails.application.routes.draw do
       member do
         get :selection
         get :lineup
+        get :captain
       end
     end
-    
+
     resources :leagues, only: [:index, :show]
 
     resources :league_players, only: [:create]

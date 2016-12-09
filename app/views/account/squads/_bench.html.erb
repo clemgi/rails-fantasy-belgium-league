@@ -1,7 +1,21 @@
 <div class="text-center">
+  <h3>Capitaine</h3>
+
+  <%= form_tag '/account/squad/captain', method: :get do %>
+  <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
+  <div>
+  <%= select_tag :captain_player, options_for_select(active_players_array) %>
+  </div>
+  <br>
+  <%= submit_tag 'Assigner le brassard', class: "btn-data" %>
+  <% end %>
+</div>
+
+<div class="text-center">
+  <h3>Remplaçants</h3>
   <div class="row">
     <div class="col-xs-6">Banc</div>
-    <div class="col-xs-6">Joueurs Actifs</div>
+    <div class="col-xs-6">Terrain</div>
   </div>
   <%= form_tag '/account/squad/lineup', method: :get do %>
   <% active_players_array = @active_players.map { |player| [player.player.name, player.player_id] } %>
@@ -22,6 +36,9 @@
     <div class="col-xs-6 col-xs-offset-3">
       <div class="card-grid">
         <div class="card card-bench">
+          <% if squad_player.captain? %>
+          <%= image_tag "captain.png", class: 'card-captain'%>
+          <% end %>
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>

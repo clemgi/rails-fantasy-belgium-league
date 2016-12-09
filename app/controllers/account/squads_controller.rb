@@ -96,6 +96,17 @@ class Account::SquadsController < ApplicationController
     end
   end
 
+  def captain
+    @squad.squad_players.each do |squad_player|
+      squad_player.captain = false
+      squad_player.save!
+    end
+    @player_captain = @squad.squad_players.where(player_id: params[:captain_player]).first
+    @player_captain.captain = true
+    @player_captain.save!
+    redirect_to '/account/squad'
+  end
+
   def edit
   end
 
