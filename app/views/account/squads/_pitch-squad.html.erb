@@ -1,11 +1,14 @@
 <div class="pitch-background text-center" style="background-image:url('<%= image_path('pitch.png') %>')">
 
-    <!-- <p><b>Gardiens de but</b></p> -->
+  <!-- <p><b>Gardiens de but</b></p> -->
   <div class="row flex">
     <% @squad_goalkeepers.each do |squad_player| %>
     <div class="col-xs-4 col-sm-2">
       <div class="card-grid">
         <div class="card">
+          <% if squad_player.captain? %>
+          <%= image_tag "captain.png", class: 'card-captain'%>
+          <% end %>
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -23,12 +26,15 @@
 
 
 
-    <!-- <p><b>Défenseurs</b></p> -->
-    <div class="row flex">
+  <!-- <p><b>Défenseurs</b></p> -->
+  <div class="row flex">
     <% @squad_defenders.each do |squad_player| %>
     <div class="col-xs-4 col-sm-2">
       <div class="card-grid">
         <div class="card">
+          <% if squad_player.captain? %>
+          <%= image_tag "captain.png", class: 'card-captain'%>
+          <% end %>
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -44,12 +50,15 @@
     <% end %>
   </div>
 
-    <!-- <p><b>Milieux de terrain</b></p> -->
-    <div class="row flex">
+  <!-- <p><b>Milieux de terrain</b></p> -->
+  <div class="row flex">
     <% @squad_midfields.each do |squad_player| %>
     <div class="col-xs-4 col-sm-2">
       <div class="card-grid">
         <div class="card">
+          <% if squad_player.captain? %>
+          <%= image_tag "captain.png", class: 'card-captain'%>
+          <% end %>
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
@@ -65,12 +74,15 @@
     <% end %>
   </div>
 
-    <!-- <p><b>Attaquants</b></p> -->
-    <div class="row flex">
+  <!-- <p><b>Attaquants</b></p> -->
+  <div class="row flex">
     <% @squad_forwards.each do |squad_player| %>
     <div class="col-xs-4 col-sm-2">
       <div class="card-grid">
         <div class="card">
+          <% if squad_player.captain? %>
+          <%= image_tag "captain.png", class: 'card-captain'%>
+          <% end %>
           <%= image_tag get_team_logo(squad_player), class: 'card-avatar-team' %>
           <div class="card-description">
             <p>
