@@ -1,19 +1,19 @@
 class Account::SquadPlayersController < ApplicationController
 
   def create
+
     if deadline?
       redirect_to selection_account_squad_path
       flash[:alert] = "Les changements ne sont pas autorisés pendant les jours de match"
     else
     @squad = current_user.squad
     @squad_player = @squad.squad_players.where(player_id: params[:player_id]).first_or_initialize
-
     set_bench_status
 
-    if valid_squad_player? && team_players_rules
+    if set_budget && valid_squad_player? && team_players_rules
       @squad_player.save
     else
-      flash[:alert] = "NON"
+      flash[:alert] = "Vous ne pouvez pas prendre que les meilleurs joueurs... ;)"
     end
 
     redirect_to selection_account_squad_path
@@ -40,11 +40,9 @@ class Account::SquadPlayersController < ApplicationController
     end
   end
 
-  def change_captain
-
-  end
-
   private
+
+
 
   def deadline?
   #  start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC+2"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
@@ -81,6 +79,16 @@ class Account::SquadPlayersController < ApplicationController
     expected_count = 3
 
     selected_players_count < expected_count
+  end
+
+
+  def set_budget
+    total_price = 0
+    @squad.players.each do |player|
+      total_price += player.price
+    end
+    budget = 800
+    total_price < budget
   end
 
    def set_bench_status
