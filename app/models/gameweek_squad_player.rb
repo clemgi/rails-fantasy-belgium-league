@@ -1,0 +1,2 @@
+class GameweekSquadPlayer < ApplicationRecord
+end
