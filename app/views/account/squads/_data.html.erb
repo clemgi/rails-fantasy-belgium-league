@@ -42,7 +42,7 @@
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
       <td><%= player.price/10.0 %>€</td>
-      <td><% if @squad_goalkeepers.count == 2 || @squad_players.where(players: { team_id: @team.id }).count == 3 || @squad.budget > 800 %>
+      <td><% if @squad_goalkeepers.count == 2 || @squad_players.where(players: { team_id: @team.id }).count == 3 || (@squad.budget + player.price) > 800 %>
         <% else %>
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
         <%= submit_tag "+", class: "btn-medium" %>
@@ -69,7 +69,7 @@
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
       <td><%= player.price/10.0 %>m€</td>
-      <td><% if @squad_defenders.count == 5 || @squad_players.where(players: { team_id: @team.id }).count == 3 || @squad.budget > 800 %>
+      <td><% if @squad_defenders.count == 5 || @squad_players.where(players: { team_id: @team.id }).count == 3 || (@squad.budget + player.price) > 800 %>
         <% else %>
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
         <%= submit_tag "+", class: "btn-medium" %>
@@ -96,7 +96,7 @@
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
       <td><%= player.price/10.0 %>m€</td>
-      <td><% if @squad_midfields.count == 5 || @squad_players.where(players: { team_id: @team.id }).count == 3 || @squad.budget > 800%>
+      <td><% if @squad_midfields.count == 5 || @squad_players.where(players: { team_id: @team.id }).count == 3 || (@squad.budget + player.price) > 800%>
         <% else %>
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
         <%= submit_tag "+", class: "btn-medium" %>
@@ -123,7 +123,7 @@
       <td><b><%= player.name %></b></td>
       <td><%= player.total_points %> Pts</td>
       <td><%= player.price/10.0 %>m€</td>
-      <td><% if @squad_forwards.count == 3 || @squad_players.where(players: { team_id: @team.id }).count == 3 %>
+      <td><% if @squad_forwards.count == 3 || @squad_players.where(players: { team_id: @team.id }).count == 3 || (@squad.budget + player.price) > 800%>
         <% else %>
         <%= form_tag account_squad_players_path(player_id: player.id) do %>
         <%= submit_tag "+", class: "btn-medium" %>

@@ -10,7 +10,7 @@ class Account::SquadPlayersController < ApplicationController
     @squad_player = @squad.squad_players.where(player_id: params[:player_id]).first_or_initialize
     set_bench_status
 
-    if set_budget && valid_squad_player? && team_players_rules
+    if set_budget? && valid_squad_player? && team_players_rules
       @squad_player.save
     else
       flash[:alert] = "Vous ne pouvez pas prendre que les meilleurs joueurs... ;)"
@@ -82,13 +82,12 @@ class Account::SquadPlayersController < ApplicationController
   end
 
 
-  def set_budget
+  def set_budget?
     total_price = 0
     @squad.players.each do |player|
       total_price += player.price
     end
-    budget = 800
-    total_price < budget
+    total_price <= 800
   end
 
    def set_bench_status

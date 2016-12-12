@@ -21,7 +21,7 @@
 </div>
 
 <div class="pitch-view--call-to-action">
-  <% if @squad_players.count == 15 %>
+  <% if @squad_players.count == 15 && @squad.budget <= 800 %>
     <%=link_to 'Sauvegarder', account_squad_path, class:"search-btn navbar-wagon-item navbar-wagon-button btn" %>
   <% end %>
 </div>

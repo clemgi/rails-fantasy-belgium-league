@@ -26,10 +26,9 @@ class Account::SquadsController < ApplicationController
 
   def create
     @squad = Squad.new(squad_params)
-    @squad.budget = updated_budget
+    @squad.budget = 0
     @squad.user = current_user
     @squad.total_points = 0
-    budget_valid?
 
     if @squad.save
       League.where(name: 'Générale').first.users << @squad.user
@@ -120,11 +119,6 @@ class Account::SquadsController < ApplicationController
   private
 
   def updated_budget
-  # if @squad == nil
-  #     @budget = 1000
-  # else
-
-
     total_p = 0
     @squad.players.each do |player|
       total_p += player.price
@@ -180,13 +174,6 @@ class Account::SquadsController < ApplicationController
     @squad_players = @squad.squad_players.joins(:player)
     @team_errors = []
 
-    unless @squad_players.players.each do |player|
-      total_price += player.price
-      end
-      total_price <= 800
-      @team_erros << "Le budget est dépassé"
-    end
-
     unless @squad_players.where(players: { position: 'Keeper'},
       status: 'active').count == 1
       @team_errors << 'Must have at least one keeper'
@@ -202,17 +189,6 @@ class Account::SquadsController < ApplicationController
     unless @squad_players.where(players: { position: 'Aanvaller'},
       status: 'active').count >= 1
       @team_errors << 'Must have at least one striker'
-    end
-  end
-
-  def budget_valid?
-    @squad_players = @squad.squad_players.joins(:player)
-    @team_errors = []
-    unless @squad_players.players.each do |player|
-      total_price += player.price
-      end
-      total_price <= 800
-      @team_erros << "Le budget est dépassé"
     end
   end
 end
