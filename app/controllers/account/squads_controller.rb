@@ -26,9 +26,10 @@ class Account::SquadsController < ApplicationController
 
   def create
     @squad = Squad.new(squad_params)
-    @squad.budget = 100
+    @squad.budget = updated_budget
     @squad.user = current_user
     @squad.total_points = 0
+    budget_valid?
 
     if @squad.save
       League.where(name: 'Générale').first.users << @squad.user
@@ -40,6 +41,7 @@ class Account::SquadsController < ApplicationController
 
   def selection
     @teams = Team.all.order(:name)
+    @squad.budget = updated_budget
 
     if params[:team_id]
       find_team
@@ -117,6 +119,19 @@ class Account::SquadsController < ApplicationController
 
   private
 
+  def updated_budget
+  # if @squad == nil
+  #     @budget = 1000
+  # else
+
+
+    total_p = 0
+    @squad.players.each do |player|
+      total_p += player.price
+    end
+  return total_p
+  end
+
   def deadline?
   #  start_time = Time.utc(*[0, 33, 10, 30, 8, 2016, 2, 243, true, "UTC"]) #seconds, minutes, hours, day, month, year, weekday, yearday isdst, zonefriday 20.30 everyweek
   #  end_time = Time.utc(*[0, 50, 10, 30, 8, 2016, 2, 243, true, "UTC"]) # monday morning
@@ -165,6 +180,13 @@ class Account::SquadsController < ApplicationController
     @squad_players = @squad.squad_players.joins(:player)
     @team_errors = []
 
+    unless @squad_players.players.each do |player|
+      total_price += player.price
+      end
+      total_price <= 800
+      @team_erros << "Le budget est dépassé"
+    end
+
     unless @squad_players.where(players: { position: 'Keeper'},
       status: 'active').count == 1
       @team_errors << 'Must have at least one keeper'
@@ -181,9 +203,16 @@ class Account::SquadsController < ApplicationController
       status: 'active').count >= 1
       @team_errors << 'Must have at least one striker'
     end
-    unless @squad_players.where(status: 'active').count == 11
+  end
 
-      @team_errors << "Must have 11 active players"
+  def budget_valid?
+    @squad_players = @squad.squad_players.joins(:player)
+    @team_errors = []
+    unless @squad_players.players.each do |player|
+      total_price += player.price
+      end
+      total_price <= 800
+      @team_erros << "Le budget est dépassé"
     end
   end
 end

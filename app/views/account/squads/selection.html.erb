@@ -3,7 +3,14 @@
 <div class="pitch-view-container">
   <div class="pitch-view-layout">
     <div class="pitch-view-layout--field">
-      <h3 class="text-center">Ma Sélection</h3>
+      <h3 class="text-center">Ma Sélection  </h3>
+      <p class="text-center"> <% if @squad.budget < 800 %>
+      <%= "Mon budget:"%> <%= @squad.budget %> <%= "sur 800" %>
+      <% else %>
+      <%= "Ton budget est dépassé! (" %> <%= @squad.budget %> <%= ") sur 800" %>
+      <% end %>
+       </p>
+
       <%= render 'account/squads/pitch-selection' %>
     </div>
     <div class="pitch-view-layout--datas">
