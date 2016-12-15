@@ -1,7 +1,9 @@
 namespace :snapshot do
   desc "Save squad players"
   task run: [:environment] do
-    GameweekSquadPlayer.where(gameweek: ENV['GAMEWEEK_NUMBER']).delete_all
+    if GameweekSquadPlayer.where(gameweek: ENV['GAMEWEEK_NUMBER']).count > 0
+      puts "You already took a snapshot for gameweek #{ENV['GAMEWEEK_NUMBER']}!"
+    else
     @squad_players = SquadPlayer.all
     @squad_players.each do |p|
       GameweekSquadPlayer.create!(
@@ -11,6 +13,8 @@ namespace :snapshot do
         captain: p.captain,
         gameweek: ENV['GAMEWEEK_NUMBER']
         )
+    end
+    puts "You took a Snapshot of all Squad_players for gameweek #{ENV['GAMEWEEK_NUMBER']}"
     end
   end
 end
