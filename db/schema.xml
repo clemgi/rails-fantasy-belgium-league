@@ -37,7 +37,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="1051" y="357" name="Teams">
+</datatypes><table x="1009" y="487" name="Teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -107,6 +107,24 @@
 <row name="Day_points" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
+<row name="won" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="draw" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="lost" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="gf" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="ga" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="gd" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -153,7 +171,7 @@
 <row name="name" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
-<row name="Budget_left" null="1" autoincrement="0">
+<row name="Budget" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <row name="Total_points" null="1" autoincrement="0">
@@ -171,10 +189,7 @@
 <datatype>TINYINT</datatype>
 <default>NULL</default><relation table="Teams" row="id" />
 </row>
-<row name="first_name" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="last_name" null="1" autoincrement="0">
+<row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="position" null="1" autoincrement="0">
@@ -220,6 +235,32 @@
 </row>
 <row name="status" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="captain" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="594" y="72" name="gameweek_squad_players">
+<row name="id" null="1" autoincrement="1">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="id_Players" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="id_Squads" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="status" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="captain" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
+<row name="gameweek" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
