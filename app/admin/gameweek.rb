@@ -12,6 +12,9 @@ permit_params :lineups, :minutes_played, :goal, :against_goal, :assist, :yellow_
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+
+
+
 end
 
 

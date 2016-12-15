@@ -26,5 +26,6 @@ Rails.application.routes.draw do
 
     resources :squad_players, only: [:create, :destroy]
     resources :gameweeks, only: [:index, :show]
+    resources :gameweek_squad_players, only: [:create, :show]
   end
 end
