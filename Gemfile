@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'rails', '5.0.0.1'

@@ -1,5 +1,6 @@
 class Gameweek < ApplicationRecord
   belongs_to :player
+  has_one :team, :through => :player
   after_create :calculate_final_score
 
 
@@ -25,7 +26,6 @@ class Gameweek < ApplicationRecord
 
 
   def points_minutes(minutes_played)
-
     if minutes_played == 0
       -2
     elsif minutes_played > 60
@@ -90,7 +90,6 @@ class Gameweek < ApplicationRecord
   end
 
   def points_conceded
-
     if player.team.ga.even? && player.position == "#{"Verdediger"}"
       points = player.team.ga / 2
     elsif player.team.ga.even? && player.position == "#{"Keeper"}"
@@ -100,8 +99,9 @@ class Gameweek < ApplicationRecord
     end
     return points
   end
+
+  # def team
+  #   player.team
+  # end
+
 end
-
-
-
-
