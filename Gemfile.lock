@@ -28,6 +28,14 @@ GIT
       responders
 
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: 332eda290cb133683a99d43a30321bab27d85e70
+  specs:
+    best_in_place (3.1.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 4c3838bb759ec741558ecf86bd6cf01465043e4c
   specs:
@@ -269,6 +277,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   autoprefixer-rails
+  best_in_place!
   better_errors
   binding_of_caller
   bootstrap-sass
